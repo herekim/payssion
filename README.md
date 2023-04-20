@@ -31,7 +31,7 @@ Payment💳 + Mission🎯 = Payssion🔥
 - 스토리북에 넣을 컴포넌트 기준
   1. Props에 따라서 UI가 달라지는 컴포넌트
      1. Card
-        - PreviewCard
+        - PreviewCard ✅
         - BigCard
         - SmallCard
      2. Button
