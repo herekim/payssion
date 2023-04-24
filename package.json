@@ -61,7 +61,10 @@
     "@storybook/addon-docs": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
+<<<<<<< HEAD
     "@storybook/addon-knobs": "^6.4.0",
+=======
+>>>>>>> 6217c0f ([클린코드 리액트 2기 김희열] 페이먼츠 미션 Step 1 (#59))
     "@storybook/addon-links": "^6.5.16",
     "@storybook/builder-webpack5": "^6.5.16",
     "@storybook/manager-webpack5": "^6.5.16",
