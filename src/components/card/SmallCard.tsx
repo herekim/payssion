@@ -1,15 +1,12 @@
 import { CardBox } from '@/components/card'
+import { CardType } from '@/domain'
 
 interface SmallCardProps {
   cardName: string
   cardNumbers: string
   cardOwner: string
   cardExpiredDate: string
-  cardType?: {
-    name: string
-    color: string
-    bg: string
-  }
+  cardType: CardType
 }
 
 const SmallCard = ({

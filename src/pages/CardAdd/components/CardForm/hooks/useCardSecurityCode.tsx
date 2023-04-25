@@ -1,4 +1,4 @@
-import { useContext, ChangeEvent } from 'react'
+import { useContext, ChangeEvent, ComponentType } from 'react'
 
 import { VirtualKeyboard } from '@/components/modal'
 import { ModalStateContext } from '@/contexts/modal'
@@ -16,20 +16,20 @@ const useCardSecurityCode = ({ securityCodeRef, nextRef }: CardSecurityCodeProps
   }
 
   const handleSecurityCode = (value: string) => {
-    if (securityCodeRef.current) {
-      if (value === 'Delete') {
-        securityCodeRef.current.value = securityCodeRef.current.value.slice(0, -1)
-        return
-      }
-      if (securityCodeRef.current.value.length >= 3) return
-      securityCodeRef.current.value += value
-    } else {
-      securityCodeRef.current.value = value
-    }
+    const currentRef = securityCodeRef.current
 
-    if (securityCodeRef.current.value.length >= 3) {
-      closeModal({ element: VirtualKeyboard })
-      nextRef.current?.focus()
+    if (!currentRef) return
+
+    if (value === 'Delete') {
+      currentRef.value = currentRef.value.slice(0, -1)
+      return
+    }
+    if (currentRef.value.length >= 3) return
+    currentRef.value += value
+
+    if (currentRef.value.length >= 3) {
+      closeModal({ element: VirtualKeyboard as ComponentType })
+      nextRef?.current?.focus()
     }
 
     handleChange({ value: securityCodeRef.current.value })

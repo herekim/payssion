@@ -7,7 +7,7 @@ import { CardDispatchContext } from '@/contexts/card'
 import { CardBackgoundColor, CardColor } from '@/domain'
 import { useModal, useOutsideClick } from '@/hooks'
 
-interface CheckModalProps {
+export interface CheckModalProps {
   onAfterModalClose?: () => void
 }
 

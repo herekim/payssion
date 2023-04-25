@@ -10,7 +10,7 @@ export const INITIAL_CARD_STATE = {
   cardType: {
     name: '',
     color: '#000000',
-    bg: '#e5e5e5',
+    bg: '#F5F5F5',
   },
 }
 

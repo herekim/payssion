@@ -4,6 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { BackButton } from '@/components/button'
 import { CardDetailsForm } from '@/components/layouts'
 import { PageDecorator } from '@/decorator'
+import { CardType } from '@/domain'
 
 import CardCompleted from './CardCompleted'
 import { useCardCompleted } from './hooks'
@@ -13,11 +14,7 @@ interface CardCompletedProps {
   cardNumbers: string
   cardOwner: string
   cardExpiredDate: string
-  cardType?: {
-    name: string
-    color: string
-    bg: string
-  }
+  cardType: CardType
 }
 
 /**
@@ -29,7 +26,7 @@ export default {
   decorators: [PageDecorator, withKnobs],
 } as ComponentMeta<typeof CardCompleted>
 
-const Template: ComponentStory<typeof CardCompleted> = ({
+const Template: ComponentStory<React.FC<CardCompletedProps>> = ({
   cardNumbers,
   cardName,
   cardOwner,
@@ -63,8 +60,9 @@ const Template: ComponentStory<typeof CardCompleted> = ({
   )
 }
 
-const MOCK_DATA = {
+const MOCK_DATA: Record<string, CardCompletedProps> = {
   하얀카드: {
+    cardName: '하얀카드',
     cardNumbers: '4321 - 8765 - **** - ****',
     cardOwner: '김하얀',
     cardExpiredDate: '07 / 2023',
@@ -75,6 +73,7 @@ const MOCK_DATA = {
     },
   },
   파란카드: {
+    cardName: '파란카드',
     cardNumbers: '4321 - 8765 - **** - ****',
     cardOwner: '이파랑',
     cardExpiredDate: '07 / 2023',
@@ -85,6 +84,7 @@ const MOCK_DATA = {
     },
   },
   빨간카드: {
+    cardName: '빨간카드',
     cardNumbers: '4321 - 8765 - **** - ****',
     cardOwner: '최빨강',
     cardExpiredDate: '07 / 2023',
@@ -95,6 +95,7 @@ const MOCK_DATA = {
     },
   },
   초록카드: {
+    cardName: '초록카드',
     cardNumbers: '4321 - 8765 - **** - ****',
     cardOwner: '강초록',
     cardExpiredDate: '07 / 2023',
@@ -105,6 +106,7 @@ const MOCK_DATA = {
     },
   },
   에메랄드카드: {
+    cardName: '에메랄드카드',
     cardNumbers: '4321 - 8765 - **** - ****',
     cardOwner: '박에메랄드',
     cardExpiredDate: '07 / 2023',
@@ -115,6 +117,7 @@ const MOCK_DATA = {
     },
   },
   분홍카드: {
+    cardName: '분홍카드',
     cardNumbers: '4321 - 8765 - **** - ****',
     cardOwner: '정분홍',
     cardExpiredDate: '07 / 2023',
@@ -125,6 +128,7 @@ const MOCK_DATA = {
     },
   },
   보라카드: {
+    cardName: '보라카드',
     cardNumbers: '4321 - 8765 - **** - ****',
     cardOwner: '진보라',
     cardExpiredDate: '07 / 2023',
@@ -135,6 +139,7 @@ const MOCK_DATA = {
     },
   },
   주황카드: {
+    cardName: '주황카드',
     cardNumbers: '4321 - 8765 - **** - ****',
     cardOwner: '장주황',
     cardExpiredDate: '07 / 2023',

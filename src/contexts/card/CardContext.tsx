@@ -5,7 +5,7 @@ import { CardAction, CardInfomation } from '@/domain'
 
 type CardDispatchContext = (action: CardAction) => void
 
-export const CardStateContext = createContext<CardInfomation>(INITIAL_CARD_STATE)
+export const CardStateContext = createContext<CardInfomation>(INITIAL_CARD_STATE as CardInfomation)
 export const CardDispatchContext = createContext<CardDispatchContext>(() => {
   throw new Error('Cannot find CardProvider')
 })

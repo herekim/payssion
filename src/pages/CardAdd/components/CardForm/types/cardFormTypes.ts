@@ -22,13 +22,15 @@ export interface HandleNumbersChangeProps {
   order: CardNumbersOrder
 }
 
+export interface NumbersRef {
+  first: RefObject<HTMLInputElement>
+  second: RefObject<HTMLInputElement>
+  third: RefObject<HTMLInputElement>
+  fourth: RefObject<HTMLInputElement>
+}
+
 export interface CardNumbersProps {
-  numbersRef: {
-    first: RefObject<HTMLInputElement>
-    second: RefObject<HTMLInputElement>
-    third: RefObject<HTMLInputElement>
-    fourth: RefObject<HTMLInputElement>
-  }
+  numbersRef: NumbersRef
   nextRef?: RefObject<HTMLInputElement>
   onFocusChange?: (order: CardNumbersOrder) => void
 }
@@ -39,11 +41,13 @@ export interface HandlePasswordChangeProps {
   value: string
   order: CardPasswordOrder
 }
+
+export interface PasswordRef {
+  first: RefObject<HTMLInputElement>
+  second: RefObject<HTMLInputElement>
+}
 export interface CardPasswordProps {
-  passwordRef: {
-    first: RefObject<HTMLInputElement>
-    second: RefObject<HTMLInputElement>
-  }
+  passwordRef: PasswordRef
   onFocusChange?: (order: CardPasswordOrder) => void
 }
 

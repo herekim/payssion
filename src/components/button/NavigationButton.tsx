@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 
 type Destination = '/card-add' | '/card-completed' | '/'
 
-interface NavigationButtonProps {
+export interface NavigationButtonProps {
   additionalClassNames?: string
   text: string
   onBeforeNavigate?: () => void

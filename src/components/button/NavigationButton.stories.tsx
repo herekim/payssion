@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import NavigationButton from './NavigationButton'
+import NavigationButton, { NavigationButtonProps } from './NavigationButton'
 
 export default {
   title: 'Components/Button/NavigationButton',
@@ -13,7 +13,7 @@ export default {
   },
 } as ComponentMeta<typeof NavigationButton>
 
-const Template: ComponentStory<typeof NavigationButton> = (props) => (
+const Template: ComponentStory<typeof NavigationButton> = (props: NavigationButtonProps) => (
   <div className="root">
     <div className="app">
       <NavigationButton {...props} />

@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react'
+import { ChangeEvent, ComponentType } from 'react'
 
 import { VirtualKeyboard } from '@/components/modal'
 import { useModal } from '@/hooks'
@@ -10,27 +10,27 @@ const useCardPassword = ({ passwordRef, onFocusChange }: CardPasswordProps) => {
   const { openModal, closeModal } = useModal()
 
   const handleSecurityCode = (order: CardPasswordOrder, value: string) => {
-    if (passwordRef[order].current) {
-      if (value === 'Delete') {
-        passwordRef[order].current.value = passwordRef[order].current.value.slice(0, -1)
-        return
-      }
-      if (passwordRef[order].current.value.length >= 1) return
-      passwordRef[order].current.value += value
-    } else {
-      passwordRef[order].current.value = value
-    }
+    const currentRef = passwordRef[order].current
 
-    if (passwordRef[order].current.value.length >= 1) {
+    if (!currentRef) return
+
+    if (value === 'Delete') {
+      currentRef.value = currentRef.value.slice(0, -1)
+      return
+    }
+    if (currentRef.value.length >= 1) return
+    currentRef.value += value
+
+    if (currentRef.value.length >= 1 && onFocusChange) {
       onFocusChange('second')
       openVirtualKeyboard('second')
     }
 
-    if (passwordRef[order].current.value.length >= 1 && order === 'second') {
-      closeModal({ element: VirtualKeyboard })
+    if (currentRef.value.length >= 1 && order === 'second') {
+      closeModal({ element: VirtualKeyboard as ComponentType })
     }
 
-    handleChange({ order, value: passwordRef[order].current.value })
+    handleChange({ order, value: currentRef.value })
   }
 
   const openVirtualKeyboard = (order: CardPasswordOrder) => {

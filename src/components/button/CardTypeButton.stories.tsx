@@ -1,13 +1,25 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import CardTypeButton, { CardTypeButtonProps } from './CardTypeButton'
+import { CardBackgoundColor, CardColor } from '@/domain'
+
+import CardTypeButton from './CardTypeButton'
+
+interface CardTypeButtonStoryProps {
+  name: string
+  color: CardColor
+  backgroundColor: CardBackgoundColor
+}
 
 export default {
   title: 'Components/Button/CardTypeButton',
   component: CardTypeButton,
 } as ComponentMeta<typeof CardTypeButton>
 
-const Template: ComponentStory<typeof CardTypeButton> = ({ name, color, backgroundColor }: CardTypeButtonProps) => (
+const Template: ComponentStory<typeof CardTypeButton> = ({
+  name,
+  color,
+  backgroundColor,
+}: CardTypeButtonStoryProps) => (
   <div className="root">
     <div className="app">
       <CardTypeButton
@@ -22,7 +34,7 @@ const Template: ComponentStory<typeof CardTypeButton> = ({ name, color, backgrou
   </div>
 )
 
-const CARD_TYPES = {
+const CARD_TYPES: Record<string, CardTypeButtonStoryProps> = {
   하얀카드: {
     name: '하얀카드',
     color: '#000000',

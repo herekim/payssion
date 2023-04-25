@@ -1,4 +1,4 @@
-import { useContext, ChangeEvent } from 'react'
+import { useContext, ChangeEvent, ComponentType } from 'react'
 
 import { CardTypeSelectionModal, VirtualKeyboard } from '@/components/modal'
 import { ModalStateContext } from '@/contexts/modal'
@@ -13,30 +13,32 @@ const useCardNumbers = ({ numbersRef, nextRef, onFocusChange }: CardNumbersProps
 
   // Todo: 리팩토링 필요. 함수 분리
   const handleNumber = (order: CardNumbersOrder, value: string) => {
-    if (numbersRef[order].current) {
+    const currentRef = numbersRef[order].current
+
+    if (!currentRef) return
+
+    if (currentRef) {
       if (value === 'Delete') {
-        numbersRef[order].current.value = numbersRef[order].current.value.slice(0, -1)
+        currentRef.value = currentRef.value.slice(0, -1)
         return
       }
-      if (numbersRef[order].current.value.length >= 4) {
+      if (currentRef.value.length >= 4) {
         return
       }
-      numbersRef[order].current.value += value
-    } else {
-      numbersRef[order].current.value = value
+      currentRef.value += value
     }
 
-    if (numbersRef[order].current.value.length >= 4) {
+    if (currentRef.value.length >= 4 && onFocusChange) {
       onFocusChange('fourth')
       openVirtualKeyboard('fourth')
     }
 
-    if (numbersRef[order].current.value.length >= 4 && order === 'fourth') {
-      closeModal({ element: VirtualKeyboard })
-      nextRef.current?.focus()
+    if (currentRef.value.length >= 4 && order === 'fourth') {
+      closeModal({ element: VirtualKeyboard as ComponentType })
+      nextRef?.current?.focus()
     }
 
-    handleChange({ order, value: numbersRef[order].current.value })
+    handleChange({ order, value: currentRef.value })
   }
 
   const openVirtualKeyboard = (order: CardNumbersOrder) => {
@@ -47,6 +49,7 @@ const useCardNumbers = ({ numbersRef, nextRef, onFocusChange }: CardNumbersProps
   }
 
   const onAfterModalClose = () => {
+    if (!onFocusChange) return
     onFocusChange('third')
     openModal({
       element: <VirtualKeyboard onKeyPress={(value) => handleNumber('third', value)} />,

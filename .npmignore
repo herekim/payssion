@@ -1,0 +1,17 @@
+.github/
+.storybook/
+.vscode/
+node_modules/
+public/
+src/
+storybook-static/
+.eslintrc.json
+.gitignore
+.prettierrc.json
+build-storybook.log
+craco.config.js
+index.origin.html
+tsconfig.json
+tsconfig.paths.json
+yarn-error.log
+*.map

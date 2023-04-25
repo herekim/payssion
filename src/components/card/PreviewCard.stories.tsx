@@ -1,18 +1,34 @@
-import { ComponentStory, Meta } from '@storybook/react'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { EmptyCard } from '@/components/card'
 import { CardDecorator } from '@/decorator'
-import { CardInfomation, getCardExpiredDateDisplay, getCardNumbersDisplay } from '@/domain'
+import {
+  CardNumbers,
+  CardOwner,
+  CardExpiredMonth,
+  CardExpiredYear,
+  CardType,
+  getCardExpiredDateDisplay,
+  getCardNumbersDisplay,
+} from '@/domain'
 
 import PreviewCard from './PreviewCard'
+
+interface PreviewCardStoryProps {
+  cardNumbers: CardNumbers
+  owner: CardOwner
+  expiredYear: CardExpiredMonth
+  expiredMonth: CardExpiredYear
+  cardType: CardType
+}
 
 export default {
   title: 'Components/Card/PreviewCard',
   component: PreviewCard,
   decorators: [CardDecorator],
-} as Meta
+} as ComponentMeta<typeof PreviewCard>
 
-const Template: ComponentStory<typeof PreviewCard> = (args: CardInfomation) => {
+const Template: ComponentStory<React.FC<PreviewCardStoryProps>> = (args: PreviewCardStoryProps) => {
   const {
     cardNumbers: { first, second, third, fourth },
     owner,
@@ -43,7 +59,7 @@ const Template: ComponentStory<typeof PreviewCard> = (args: CardInfomation) => {
 }
 
 // Todo: 이렇게 Mock 데이터로 넣는 게 맞는지? 아니 Context를 활용할 수 있는 방법은 없는지?
-const mockData = {
+const MOCK_DATA: Record<string, PreviewCardStoryProps> = {
   하얀카드: {
     cardNumbers: { first: '4321', second: '8765', third: '2109', fourth: '6543' },
     owner: '김하얀',
@@ -135,25 +151,25 @@ const mockData = {
 }
 
 export const 하얀카드 = Template.bind({})
-하얀카드.args = mockData['하얀카드']
+하얀카드.args = MOCK_DATA['하얀카드']
 
 export const 파란카드 = Template.bind({})
-파란카드.args = mockData['파란카드']
+파란카드.args = MOCK_DATA['파란카드']
 
 export const 빨간카드 = Template.bind({})
-빨간카드.args = mockData['빨간카드']
+빨간카드.args = MOCK_DATA['빨간카드']
 
 export const 초록카드 = Template.bind({})
-초록카드.args = mockData['초록카드']
+초록카드.args = MOCK_DATA['초록카드']
 
 export const 에메랄드카드 = Template.bind({})
-에메랄드카드.args = mockData['에메랄드카드']
+에메랄드카드.args = MOCK_DATA['에메랄드카드']
 
 export const 분홍카드 = Template.bind({})
-분홍카드.args = mockData['분홍카드']
+분홍카드.args = MOCK_DATA['분홍카드']
 
 export const 보라카드 = Template.bind({})
-보라카드.args = mockData['보라카드']
+보라카드.args = MOCK_DATA['보라카드']
 
 export const 주황카드 = Template.bind({})
-주황카드.args = mockData['주황카드']
+주황카드.args = MOCK_DATA['주황카드']

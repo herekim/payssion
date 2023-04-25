@@ -4,6 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { BackButton } from '@/components/button'
 import { CardDetailsForm } from '@/components/layouts'
 import { PageDecorator } from '@/decorator'
+import { CardType } from '@/domain'
 
 import CardUpdate from './CardUpdate'
 import { useCardUpdate } from './hooks'
@@ -14,11 +15,7 @@ interface CardUpdateProps {
   cardNumbers: string
   cardOwner: string
   cardExpiredDate: string
-  cardType?: {
-    name: string
-    color: string
-    bg: string
-  }
+  cardType: CardType
 }
 
 /**
@@ -30,7 +27,7 @@ export default {
   decorators: [PageDecorator, withKnobs],
 } as ComponentMeta<typeof CardUpdate>
 
-const Template: ComponentStory<typeof CardUpdate> = ({
+const Template: ComponentStory<React.FC<CardUpdateProps>> = ({
   cardNumbers,
   cardName,
   cardOwner,
@@ -68,11 +65,12 @@ const Template: ComponentStory<typeof CardUpdate> = ({
   )
 }
 
-const MOCK_DATA = {
+const MOCK_DATA: Record<string, CardUpdateProps> = {
   하얀카드: {
+    cardName: '하얀카드',
+    cardNickname: '하양이',
     cardNumbers: '4321 - 8765 - **** - ****',
     cardOwner: '김하얀',
-    cardNickname: '하양이',
     cardExpiredDate: '07 / 2023',
     cardType: {
       name: '하얀카드',
@@ -81,9 +79,10 @@ const MOCK_DATA = {
     },
   },
   파란카드: {
+    cardName: '파란카드',
+    cardNickname: '파랑이',
     cardNumbers: '4321 - 8765 - **** - ****',
     cardOwner: '이파랑',
-    cardNickname: '파랑이',
     cardExpiredDate: '07 / 2023',
     cardType: {
       name: '파란카드',
@@ -92,9 +91,10 @@ const MOCK_DATA = {
     },
   },
   빨간카드: {
+    cardName: '빨간카드',
+    cardNickname: '빨강이',
     cardNumbers: '4321 - 8765 - **** - ****',
     cardOwner: '최빨강',
-    cardNickname: '빨강이',
     cardExpiredDate: '07 / 2023',
     cardType: {
       name: '빨간카드',
@@ -103,9 +103,10 @@ const MOCK_DATA = {
     },
   },
   초록카드: {
+    cardName: '초록카드',
+    cardNickname: '초록이',
     cardNumbers: '4321 - 8765 - **** - ****',
     cardOwner: '강초록',
-    cardNickname: '초록이',
     cardExpiredDate: '07 / 2023',
     cardType: {
       name: '초록카드',
@@ -114,9 +115,10 @@ const MOCK_DATA = {
     },
   },
   에메랄드카드: {
+    cardName: '에메랄드카드',
+    cardNickname: '에메랄드',
     cardNumbers: '4321 - 8765 - **** - ****',
     cardOwner: '박에메랄드',
-    cardNickname: '에메랄드',
     cardExpiredDate: '07 / 2023',
     cardType: {
       name: '에메랄드카드',
@@ -125,9 +127,10 @@ const MOCK_DATA = {
     },
   },
   분홍카드: {
+    cardName: '분홍카드',
+    cardNickname: '분홍이',
     cardNumbers: '4321 - 8765 - **** - ****',
     cardOwner: '정분홍',
-    cardNickname: '분홍이',
     cardExpiredDate: '07 / 2023',
     cardType: {
       name: '분홍카드',
@@ -136,9 +139,10 @@ const MOCK_DATA = {
     },
   },
   보라카드: {
+    cardName: '보라카드',
+    cardNickname: '보라',
     cardNumbers: '4321 - 8765 - **** - ****',
     cardOwner: '진보라',
-    cardNickname: '보라',
     cardExpiredDate: '07 / 2023',
     cardType: {
       name: '보라카드',
@@ -147,9 +151,10 @@ const MOCK_DATA = {
     },
   },
   주황카드: {
+    cardName: '주황카드',
+    cardNickname: '주황이',
     cardNumbers: '4321 - 8765 - **** - ****',
     cardOwner: '장주황',
-    cardNickname: '주황이',
     cardExpiredDate: '07 / 2023',
     cardType: {
       name: '주황카드',

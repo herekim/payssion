@@ -4,7 +4,7 @@ export interface CardTypeButtonProps {
   name: string
   backgroundColor: CardBackgoundColor
   color: CardColor
-  selectCardType: (name: string, bg: string, color: string) => void
+  selectCardType: (name: string, bg: CardBackgoundColor, color: CardColor) => void
 }
 
 const CardTypeButton = ({ name, backgroundColor, color, selectCardType }: CardTypeButtonProps) => {

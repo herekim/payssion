@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { CardDecorator } from '@/decorator'
 import { useModal } from '@/hooks'
 
-import CardTypeSelectionModal from './CardTypeSelectionModal'
+import CardTypeSelectionModal, { CheckModalProps } from './CardTypeSelectionModal'
 
 export default {
   title: 'Components/Modal/CardTypeSelectionModal',
@@ -11,10 +11,10 @@ export default {
   decorators: [CardDecorator],
 } as ComponentMeta<typeof CardTypeSelectionModal>
 
-const Template: ComponentStory<typeof CardTypeSelectionModal> = () => {
+const Template: ComponentStory<typeof CardTypeSelectionModal> = (args: CheckModalProps) => {
   const { openModal } = useModal()
   return (
-    <button className="digit-button px-5" onClick={() => openModal({ element: <CardTypeSelectionModal /> })}>
+    <button className="digit-button px-5" onClick={() => openModal({ element: <CardTypeSelectionModal {...args} /> })}>
       Click Here
     </button>
   )

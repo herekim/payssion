@@ -28,7 +28,7 @@ export default {
   },
 } as ComponentMeta<typeof CardList>
 
-const Template: ComponentStory<typeof CardList> = (args: CardListProps) => {
+const Template: ComponentStory<React.FC<CardListProps>> = (args: CardListProps) => {
   const { onClickCard } = useCardList()
 
   const { cardList } = args
@@ -59,7 +59,7 @@ const Template: ComponentStory<typeof CardList> = (args: CardListProps) => {
   )
 }
 
-const CARD_LIST = [
+const CARD_LIST: CardInfomation[] = [
   {
     cardNumbers: { first: '1234', second: '1234', third: '1234', fourth: '1234' },
     name: '하얀카드',
@@ -72,7 +72,7 @@ const CARD_LIST = [
     cardType: {
       name: '하얀카드',
       color: '#000000',
-      bg: '#e5e5e5',
+      bg: '#F5F5F5',
     },
   },
   {
@@ -102,7 +102,7 @@ const CARD_LIST = [
     cardType: {
       name: '파란카드',
       color: '#ffffff',
-      bg: '#2a5f9e',
+      bg: '#162bb1',
     },
   },
 ]

@@ -1,10 +1,10 @@
-import { useRef } from 'react'
+import { useRef, ComponentType } from 'react'
 
 import { BottomSheetContainer } from '@/components/modal'
 import { getRandomVirtualDigits } from '@/domain'
 import { useModal, useOutsideClick } from '@/hooks'
 
-interface VirtualKeyboardProps {
+export interface VirtualKeyboardProps {
   onKeyPress: (value: string) => void
 }
 
@@ -13,7 +13,7 @@ const VirtualKeyboard = ({ onKeyPress }: VirtualKeyboardProps) => {
   const { closeModal } = useModal()
 
   useOutsideClick(modalRef, () => {
-    closeModal({ element: VirtualKeyboard })
+    closeModal({ element: VirtualKeyboard as ComponentType })
   })
 
   return (

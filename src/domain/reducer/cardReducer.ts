@@ -60,7 +60,7 @@ const cardReducer = (state: CardInfomation, action: CardAction): CardInfomation 
     case 'SET_ALL':
       return action.payload
     case 'RESET_ALL':
-      return INITIAL_CARD_STATE
+      return INITIAL_CARD_STATE as CardInfomation
     default:
       throw new Error(`Unhandled action type: ${action}`)
   }

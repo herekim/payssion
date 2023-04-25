@@ -26,13 +26,23 @@ export type CardPasswords = {
   [key in 'first' | 'second']: string
 }
 export type CardPassword = { first: string } | { second?: string }
+export type CardColor = '#ffffff' | '#000000'
+export type CardBackgoundColor =
+  | '#F5F5F5'
+  | '#162bb1'
+  | '#932929'
+  | '#54cb25'
+  | '#20d0ad'
+  | '#d320c7'
+  | '#7c1ddb'
+  | '#e1860f'
 export type CardType = {
   name: string
-  color: string
-  bg: string
+  color: CardColor
+  bg: CardBackgoundColor
 }
 export type CardTypes = {
-  [key in 'name' | 'color' | 'bg']: string
+  [key in keyof CardType]: CardType[key]
 }
 
 export type CardAction =
@@ -106,15 +116,3 @@ export type CardListAction =
       type: 'DELETE'
       payload: CardInfomation
     }
-
-export type CardColor = '#ffffff' | '#000000'
-
-export type CardBackgoundColor =
-  | '#F5F5F5'
-  | '#162bb1'
-  | '#932929'
-  | '#54cb25'
-  | '#20d0ad'
-  | '#d320c7'
-  | '#7c1ddb'
-  | '#e1860f'

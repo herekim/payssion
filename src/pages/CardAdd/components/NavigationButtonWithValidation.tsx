@@ -18,7 +18,9 @@ const NavigationButtonWithValidation = (props: NavigationButtonWithValidationPro
 
   return (
     <>
-      <Toast open={openValidToast} onOpenChange={setOpenValidToast} title="입력정보가 올바른지 확인해주세요❗️" />
+      {openValidToast && setOpenValidToast && (
+        <Toast open={openValidToast} onOpenChange={setOpenValidToast} title="입력정보가 올바른지 확인해주세요❗️" />
+      )}
       <NavigationButton {...props} />
     </>
   )
