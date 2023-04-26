@@ -5,7 +5,6 @@
   "private": false,
   "type": "module",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "browser": "./browser/specific/main.js",
   "exports": {
@@ -17,9 +16,8 @@
   },
   "scripts": {
     "start": "craco start",
-    "build:types": "tsc --emitDeclarationOnly",
-    "build": "craco build && yarn build:types",
-    "build:rollup": "rollup --config --sourcemap",
+    "build": "craco build",
+    "build:rollup": "rollup -c",
     "test": "craco test",
     "eject": "craco eject",
     "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src",
