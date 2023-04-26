@@ -3,7 +3,7 @@ import { useRef } from 'react'
 
 import { CardDecorator } from '@/decorator'
 
-import Input from './Input'
+import Input, { InputProps } from './Input'
 
 export default {
   title: 'Components/Input',
@@ -11,7 +11,7 @@ export default {
   decorators: [CardDecorator],
 } as Meta
 
-const Template: ComponentStory<typeof Input> = (props) => {
+const Template: ComponentStory<React.FC<InputProps>> = (props) => {
   const ref = useRef<HTMLInputElement>(null)
   return <Input {...props} ref={ref} />
 }

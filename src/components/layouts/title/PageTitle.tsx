@@ -1,14 +1,4 @@
-import { ReactNode } from 'react'
-
-import { PAGE_TITLES } from '@/contants'
-
-type Title = (typeof PAGE_TITLES)[number]
-
-interface PageTitleProps {
-  title: Title
-  addtionalClassName?: string
-  buttonElement?: ReactNode
-}
+import { PageTitleProps } from './types'
 
 const PageTitle = ({ title, addtionalClassName, buttonElement }: PageTitleProps) => {
   return (

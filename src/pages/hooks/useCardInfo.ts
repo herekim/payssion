@@ -18,6 +18,11 @@ interface HandleOwnerProps {
   value: string
 }
 
+interface HandlePasswordProps {
+  value: string
+  order: 'first' | 'second'
+}
+
 const useCardInfo = () => {
   const cardDispatch = useContext(CardDispatchContext)
 
@@ -67,11 +72,6 @@ const useCardInfo = () => {
 
   const handleNickname = (value: string) => {
     cardDispatch({ type: 'SET_NICKNAME', payload: value })
-  }
-
-  interface HandlePasswordProps {
-    value: string
-    order: 'first' | 'second'
   }
 
   const handlePassword = ({ value, order }: HandlePasswordProps) => {

@@ -1,7 +1,7 @@
 import { ForwardedRef, DetailedHTMLProps, InputHTMLAttributes, forwardRef } from 'react'
 
 type DetailedInputProps = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
-interface InputProps extends Omit<DetailedInputProps, 'type'> {
+export interface InputProps extends Omit<DetailedInputProps, 'type'> {
   type?: DetailedInputProps['type']
   addtionalClassName?: string
 }

@@ -1,8 +1,4 @@
-import { RefObject } from 'react'
-interface CardAliasInputProps {
-  inputRef: RefObject<HTMLInputElement>
-  defaultValue?: string
-}
+import { CardAliasInputProps } from './types'
 
 const CardAliasInput = ({ inputRef, defaultValue = '' }: CardAliasInputProps) => {
   return (

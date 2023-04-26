@@ -1,15 +1,4 @@
-import { CardBox } from '@/components/card'
-import { CardType } from '@/domain'
-
-interface BigCardProps {
-  onClickDeleteButton?: () => void
-  cardName: string
-  cardNumbers: string
-  cardOwner: string
-  cardExpiredDate: string
-  cardType: CardType
-}
-
+import { CardBox, BigCardProps } from '@/components/card'
 const BigCard = ({
   onClickDeleteButton,
   cardName,

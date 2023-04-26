@@ -1,12 +1,9 @@
-import { ChangeEvent, RefObject, useContext } from 'react'
+import { ChangeEvent, useContext } from 'react'
 
 import { Input, InputTitle, InputContainer } from '@/components/input'
 import { CardStateContext } from '@/contexts/card'
+import { CardOwnerProps } from '@/pages/CardAdd/components/CardForm/types'
 import { useCardInfo } from '@/pages/hooks'
-
-interface CardOwnerProps {
-  ownerRef: RefObject<HTMLInputElement>
-}
 
 const CardOwner = ({ ownerRef }: CardOwnerProps) => {
   // Todo: useContext 커스텀 훅으로 숨기기

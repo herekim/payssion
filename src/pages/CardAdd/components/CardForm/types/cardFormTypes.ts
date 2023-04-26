@@ -63,3 +63,7 @@ export interface CardSecurityCodeProps {
   securityCodeRef: RefObject<HTMLInputElement>
   nextRef?: RefObject<HTMLInputElement>
 }
+
+export interface CardOwnerProps {
+  ownerRef: RefObject<HTMLInputElement>
+}
