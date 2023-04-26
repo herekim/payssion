@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
 
-const { useContext } = require('react')
 const alias = require('rollup-plugin-alias')
 const commonjs = require('rollup-plugin-commonjs')
 const json = require('rollup-plugin-json')

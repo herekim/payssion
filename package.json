@@ -1,6 +1,6 @@
 {
   "name": "payssion",
-  "version": "0.0.12",
+  "version": "0.0.10",
   "license": "MIT",
   "private": false,
   "type": "module",
@@ -12,7 +12,7 @@
     ".": {
       "import": "./dist/index.esm.js",
       "require": "./dist/index.js",
-      "types": "./dist//index.d.ts"
+      "types": "./dist/index.d.ts"
     }
   },
   "scripts": {
