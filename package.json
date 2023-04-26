@@ -3,9 +3,6 @@
   "version": "0.0.10",
   "license": "MIT",
   "private": false,
-  "main": "build/static/js/main.js",
-  "module": "build/static/js/main.js",
-  "types": "build/types/index.d.ts",
   "browser": "./browser/specific/main.js",
   "exports": {
     ".": {
