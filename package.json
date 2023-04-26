@@ -1,6 +1,6 @@
 {
   "name": "payssion",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "license": "MIT",
   "private": false,
   "main": "build/static/js/main.js",
@@ -109,6 +109,5 @@
   "resolutions": {
     "esquery": "1.4.0"
   },
-  "readme": "ERROR: No README data found!",
-  "_id": "my-app@0.1.0"
+  "readme": "ERROR: No README data found!"
 }
