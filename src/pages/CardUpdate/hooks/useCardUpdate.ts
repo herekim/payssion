@@ -1,7 +1,7 @@
 import { useRef, useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
 
 import { CardStateContext } from '@/contexts'
+import { usePage } from '@/hooks'
 import { useCardList } from '@/pages/CardList/hooks'
 import { useCardInfo } from '@/pages/hooks'
 
@@ -15,7 +15,7 @@ const useCardUpdate = () => {
     expiredMonth,
     expiredYear,
   } = cardInfo
-  const navigate = useNavigate()
+  const { changeCurrentPage } = usePage()
   const { handleNickname, resetCardInfo } = useCardInfo()
 
   const { updateCard, deleteCard } = useCardList()
@@ -31,7 +31,7 @@ const useCardUpdate = () => {
 
   const onClickDeleteButton = () => {
     deleteCard(cardInfo)
-    navigate('/')
+    changeCurrentPage('CardList')
   }
 
   const cardNumbers = `${first} - ${second} - ${third} - ${fourth}`

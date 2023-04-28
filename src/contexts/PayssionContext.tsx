@@ -10,6 +10,7 @@ type PayssionContext = {
   processPayment: () => void
   currentPage: Page
   changePage: (page: Page) => void
+  goToPrevPage: () => void
 }
 
 export const PayssionContext = createContext<PayssionContext>({
@@ -18,6 +19,7 @@ export const PayssionContext = createContext<PayssionContext>({
   isOpen: false,
   isSuceess: false,
   processPayment: () => {},
-  currentPage: 'CardAdd',
+  currentPage: 'CardList',
   changePage: () => {},
+  goToPrevPage: () => {},
 })

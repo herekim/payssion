@@ -9,7 +9,7 @@ export default {
   args: {
     additionalClassNames: 'mt-50',
     text: '다음',
-    to: '/',
+    to: 'CardList',
   },
 } as ComponentMeta<typeof NavigationButton>
 

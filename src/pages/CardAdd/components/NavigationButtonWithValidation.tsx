@@ -1,12 +1,11 @@
 import { NavigationButton } from '@/components/button'
 import { Toast } from '@/components/toast'
-
-type Destination = '/card-add' | '/card-completed' | '/'
+import { Page } from '@/contexts'
 
 interface NavigationButtonWithValidationProps {
   additionalClassNames?: string
   text: string
-  to: Destination
+  to: Page
   openValidToast?: boolean
   setOpenValidToast?: React.Dispatch<React.SetStateAction<boolean>>
   onBeforeNavigate?: () => void

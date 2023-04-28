@@ -1,12 +1,11 @@
-import { useNavigate } from 'react-router-dom'
-
-type Destination = '/card-add' | '/card-completed' | '/'
+import { Page } from '@/contexts'
+import { usePage } from '@/hooks'
 
 export interface NavigationButtonProps {
   additionalClassNames?: string
   text: string
   onBeforeNavigate?: () => void
-  to: Destination
+  to: Page
   isNavigationEnabled?: () => boolean
 }
 
@@ -17,14 +16,14 @@ const NavigationButton = ({
   to,
   isNavigationEnabled = () => true,
 }: NavigationButtonProps) => {
-  const navigate = useNavigate()
+  const { changeCurrentPage } = usePage()
 
-  const goToSpecifiedPage = async (to: Destination) => {
+  const goToSpecifiedPage = async (to: Page) => {
     if (onBeforeNavigate) {
       await Promise.resolve(onBeforeNavigate())
     }
     if (isNavigationEnabled()) {
-      navigate(to)
+      changeCurrentPage(to)
     }
   }
 

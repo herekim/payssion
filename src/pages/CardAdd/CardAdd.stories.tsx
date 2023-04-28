@@ -41,7 +41,7 @@ const Template: ComponentStory<typeof CardAdd> = () => {
         <CardForm.CardPassword passwordRef={passwordRef} />
       </CardForm>
       <NavigationButtonWithValidation
-        to="/card-completed"
+        to="CardCompleted"
         text="다음"
         openValidToast={openValidToast}
         setOpenValidToast={setOpenValidToast}

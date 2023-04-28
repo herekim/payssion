@@ -1,8 +1,8 @@
-import { useNavigate } from 'react-router-dom'
+import { usePage } from '@/hooks'
 
 const BackButton = () => {
-  const navigate = useNavigate()
-  return <button onClick={() => navigate(-1)}>&#60;</button>
+  const { goToPreviousPage } = usePage()
+  return <button onClick={goToPreviousPage}>&#60;</button>
 }
 
 export default BackButton

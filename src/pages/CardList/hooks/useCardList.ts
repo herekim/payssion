@@ -1,12 +1,12 @@
 import { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
 
 import { CardListStateContext, CardListDispatchContext } from '@/contexts'
 import { CardInfomation } from '@/domain'
+import { usePage } from '@/hooks'
 import { useCardInfo } from '@/pages/hooks'
 
 const useCardList = () => {
-  const navigate = useNavigate()
+  const { changeCurrentPage } = usePage()
 
   const cardList = useContext(CardListStateContext)
   const cardListDispatch = useContext(CardListDispatchContext)
@@ -15,7 +15,7 @@ const useCardList = () => {
 
   const onClickCard = (card: CardInfomation) => {
     setAllCardInfo(card)
-    navigate('/card-update')
+    changeCurrentPage('CardUpdate')
   }
 
   const addCard = (newCard: CardInfomation) => {

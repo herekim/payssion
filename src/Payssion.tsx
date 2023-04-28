@@ -1,18 +1,14 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-
 import { Modal } from '@/components/modal'
+import Page from '@/Page'
 import { CardProvider, CardListProvider, ModalProvider } from '@/providers'
-import routes from '@/routes'
 
-const router = createBrowserRouter(routes)
-
-function App() {
+function Payssion() {
   return (
     <div className="root">
       <ModalProvider>
         <CardListProvider>
           <CardProvider>
-            <RouterProvider router={router} />
+            <Page />
             <Modal />
           </CardProvider>
         </CardListProvider>
@@ -21,4 +17,4 @@ function App() {
   )
 }
 
-export default App
+export default Payssion

@@ -11,7 +11,7 @@ const { terser } = require('rollup-plugin-terser')
 const typescript = require('rollup-plugin-typescript2')
 
 module.exports = {
-  input: 'src',
+  input: 'src/index.ts',
   output: [
     {
       file: 'dist/index.js',

@@ -1,11 +1,11 @@
 import { withKnobs } from '@storybook/addon-knobs'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { Link } from 'react-router-dom'
 
 import { EmptyCard, SmallCard } from '@/components/card'
 import { PageTitle } from '@/components/layouts'
 import { CardDecorator } from '@/decorator'
 import { getCardNumbersDisplay, getCardExpiredDateDisplay, CardInfomation } from '@/domain'
+import { usePage } from '@/hooks'
 import { useCardList } from '@/pages/CardList/hooks'
 
 import CardList from './CardList'
@@ -30,6 +30,7 @@ export default {
 
 const Template: ComponentStory<React.FC<CardListProps>> = (args: CardListProps) => {
   const { onClickCard } = useCardList()
+  const { changeCurrentPage } = usePage()
 
   const { cardList } = args
   return (
@@ -50,11 +51,11 @@ const Template: ComponentStory<React.FC<CardListProps>> = (args: CardListProps) 
           </div>
         )
       })}
-      <Link to="/card-add" style={{ textDecoration: 'none' }}>
+      <button onClick={() => changeCurrentPage('CardAdd')}>
         <EmptyCard>
           <span>+</span>
         </EmptyCard>
-      </Link>
+      </button>
     </>
   )
 }

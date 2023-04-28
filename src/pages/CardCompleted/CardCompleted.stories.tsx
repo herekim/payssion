@@ -53,7 +53,7 @@ const Template: ComponentStory<React.FC<CardCompletedProps>> = ({
       <CardDetailsForm.NavigationButton
         additionalClassNames="mt-50"
         onBeforeNavigate={handlePreNavigation}
-        to="/"
+        to="CardList"
         text="다음"
       />
     </CardDetailsForm>

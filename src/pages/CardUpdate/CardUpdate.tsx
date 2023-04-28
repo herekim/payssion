@@ -34,7 +34,7 @@ function CardUpdate() {
       <CardDetailsForm.NavigationButton
         additionalClassNames="mt-50"
         onBeforeNavigate={handlePreNavigation}
-        to="/"
+        to="CardList"
         text="다음"
       />
     </CardDetailsForm>

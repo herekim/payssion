@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom'
-
 import { EmptyCard, SmallCard } from '@/components/card'
 import { PageTitle } from '@/components/layouts'
 import { getCardNumbersDisplay, getCardExpiredDateDisplay } from '@/domain'
+import { usePage } from '@/hooks'
 import { useCardList } from '@/pages/CardList/hooks'
 
 function CardList() {
   const { cardList, onClickCard } = useCardList()
+  const { changeCurrentPage } = usePage()
 
   return (
     <div className="root">
@@ -27,11 +27,11 @@ function CardList() {
             </div>
           )
         })}
-        <Link to="/card-add" style={{ textDecoration: 'none' }}>
+        <button onClick={() => changeCurrentPage('CardAdd')}>
           <EmptyCard>
             <span>+</span>
           </EmptyCard>
-        </Link>
+        </button>
       </div>
     </div>
   )
