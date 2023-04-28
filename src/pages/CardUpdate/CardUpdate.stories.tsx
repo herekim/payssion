@@ -1,4 +1,3 @@
-import { withKnobs } from '@storybook/addon-knobs'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { BackButton } from '@/components/button'
@@ -24,7 +23,7 @@ interface CardUpdateProps {
 export default {
   title: 'Pages/CardUpdate',
   component: CardUpdate,
-  decorators: [PageDecorator, withKnobs],
+  decorators: [PageDecorator],
 } as ComponentMeta<typeof CardUpdate>
 
 const Template: ComponentStory<React.FC<CardUpdateProps>> = ({

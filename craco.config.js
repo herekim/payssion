@@ -5,6 +5,7 @@ module.exports = {
   webpack: {
     alias: {
       '@': path.resolve(__dirname, 'src/'),
+      react: path.resolve('./node_modules/react'),
     },
   },
 }

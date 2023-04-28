@@ -1,4 +1,3 @@
-import { withKnobs } from '@storybook/addon-knobs'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { EmptyCard, SmallCard } from '@/components/card'
@@ -18,7 +17,7 @@ interface CardListProps {
 export default {
   title: 'Pages/CardList',
   component: CardList,
-  decorators: [CardDecorator, withKnobs],
+  decorators: [CardDecorator],
   argTypes: {
     cardList: {
       control: {

@@ -1,4 +1,3 @@
-import { withKnobs } from '@storybook/addon-knobs'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { BackButton } from '@/components/button'
@@ -23,7 +22,7 @@ interface CardCompletedProps {
 export default {
   title: 'Pages/CardCompleted',
   component: CardCompleted,
-  decorators: [PageDecorator, withKnobs],
+  decorators: [PageDecorator],
 } as ComponentMeta<typeof CardCompleted>
 
 const Template: ComponentStory<React.FC<CardCompletedProps>> = ({
