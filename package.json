@@ -1,6 +1,6 @@
 {
   "name": "payssion",
-  "version": "0.0.23",
+  "version": "0.0.22",
   "license": "MIT",
   "private": false,
   "main": "dist/index.js",
@@ -26,8 +26,8 @@
     "depcheck": "depcheck"
   },
   "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "dependencies": {
     "@radix-ui/react-toast": "^1.1.3",
