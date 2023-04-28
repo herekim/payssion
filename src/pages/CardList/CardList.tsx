@@ -10,7 +10,7 @@ function CardList() {
 
   return (
     <div className="root">
-      <div className="app text-center">
+      <div className="payssion-app text-center">
         <PageTitle addtionalClassName="mb-10" title="보유 카드" />
         {cardList?.map((card) => {
           const { cardNumbers, owner, name, nickname, expiredMonth, expiredYear, cardType } = card

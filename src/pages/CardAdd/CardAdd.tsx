@@ -22,7 +22,7 @@ function CardAdd() {
   } = useCardAdd()
 
   return (
-    <div className="app">
+    <div className="payssion-app">
       <PageTitle title="카드 추가" buttonElement={<BackButton />} />
       <PreviewCard />
       <CardForm>

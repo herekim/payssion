@@ -18,7 +18,7 @@ input {
   font-size: 16px;
 }
 
-.root {
+.payssion-root {
   background-color: #fff;
   width: 375px;
   min-width: 375px;
@@ -28,7 +28,7 @@ input {
   overflow-y: scroll;
 }
 
-.app {
+.payssion-app {
   height: 100%;
   padding: 24px;
 }

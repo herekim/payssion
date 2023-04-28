@@ -11,7 +11,7 @@ export default {
 
 const Template: ComponentStory<typeof PageTitle> = (props) => (
   <div className="root">
-    <div className="app">
+    <div className="payssion-app">
       <PageTitle {...props} />
     </div>
   </div>

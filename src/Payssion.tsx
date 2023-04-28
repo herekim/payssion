@@ -4,16 +4,16 @@ import { CardProvider, CardListProvider, ModalProvider } from '@/providers'
 
 function Payssion() {
   return (
-    <div className="root">
-      <ModalProvider>
-        <CardListProvider>
-          <CardProvider>
+    <ModalProvider>
+      <CardListProvider>
+        <CardProvider>
+          <div className="payssion-root">
             <Page />
             <Modal />
-          </CardProvider>
-        </CardListProvider>
-      </ModalProvider>
-    </div>
+          </div>
+        </CardProvider>
+      </CardListProvider>
+    </ModalProvider>
   )
 }
 
