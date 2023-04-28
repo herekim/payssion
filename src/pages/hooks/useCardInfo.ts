@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 
-import { CardDispatchContext } from '@/contexts/card'
+import { CardDispatchContext } from '@/contexts'
 import { CardInfomation } from '@/domain'
 import { isNumber } from '@/utils'
 

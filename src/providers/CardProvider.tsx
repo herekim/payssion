@@ -1,7 +1,7 @@
 import { useReducer, PropsWithChildren } from 'react'
 
 import { INITIAL_CARD_STATE } from '@/contants'
-import { CardStateContext, CardDispatchContext } from '@/contexts/card'
+import { CardStateContext, CardDispatchContext } from '@/contexts'
 import { CardInfomation, cardReducer } from '@/domain'
 
 function CardProvider({ children }: PropsWithChildren) {

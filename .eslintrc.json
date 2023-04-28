@@ -37,6 +37,8 @@
     "import/no-unresolved": "off",
     "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
     "react/react-in-jsx-scope": 0,
+    "no-empty-function": "off",
+    "@typescript-eslint/no-empty-function": "off",
     "import/order": [
       "error",
       {

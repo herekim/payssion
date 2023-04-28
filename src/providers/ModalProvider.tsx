@@ -1,6 +1,6 @@
 import { useState, useMemo, PropsWithChildren } from 'react'
 
-import { ModalStateContext, ModalDispatchContext } from '@/contexts/modal'
+import { ModalStateContext, ModalDispatchContext } from '@/contexts'
 import { ModalState } from '@/types'
 
 const ModalProvider = ({ children }: PropsWithChildren) => {

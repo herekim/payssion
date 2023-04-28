@@ -3,7 +3,7 @@ import { useRef, useContext } from 'react'
 import { CardTypeButton } from '@/components/button'
 import { BottomSheetContainer, DarkOverlay } from '@/components/modal'
 import { CARD_TYPES } from '@/contants'
-import { CardDispatchContext } from '@/contexts/card'
+import { CardDispatchContext } from '@/contexts'
 import { CardBackgoundColor, CardColor } from '@/domain'
 import { useModal, useOutsideClick } from '@/hooks'
 

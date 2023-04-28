@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 
 import { EmptyCard } from '@/components/card'
-import { CardStateContext } from '@/contexts/card'
+import { CardStateContext } from '@/contexts'
 import { getCardExpiredDateDisplay, getCardNumbersDisplay } from '@/domain'
 
 const PreviewCard = () => {

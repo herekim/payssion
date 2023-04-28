@@ -1,7 +1,7 @@
 import { useRef, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { CardStateContext } from '@/contexts/card'
+import { CardStateContext } from '@/contexts'
 import { useCardList } from '@/pages/CardList/hooks'
 import { useCardInfo } from '@/pages/hooks'
 

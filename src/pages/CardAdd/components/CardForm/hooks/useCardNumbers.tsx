@@ -1,7 +1,7 @@
 import { useContext, ChangeEvent, ComponentType } from 'react'
 
 import { CardTypeSelectionModal, VirtualKeyboard } from '@/components/modal'
-import { ModalStateContext } from '@/contexts/modal'
+import { ModalStateContext } from '@/contexts'
 import { useModal } from '@/hooks'
 import { CardNumbersProps, CardNumbersOrder } from '@/pages/CardAdd/components/CardForm/types'
 import { useCardInfo } from '@/pages/hooks'

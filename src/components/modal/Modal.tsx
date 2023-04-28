@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 
-import { ModalStateContext } from '@/contexts/modal'
+import { ModalStateContext } from '@/contexts'
 
 const Modal = () => {
   const openedModal = useContext(ModalStateContext)

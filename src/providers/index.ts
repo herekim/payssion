@@ -1,3 +1,3 @@
-export { default as CardProvider } from './card'
-export { default as CardListProvider } from './cardList'
-export { default as ModalProvider } from './modal'
+export { default as CardProvider } from './CardProvider'
+export { default as CardListProvider } from './CardListProvider'
+export { default as ModalProvider } from './ModalProvider'

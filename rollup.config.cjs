@@ -31,7 +31,6 @@ module.exports = {
     commonjs({
       include: 'node_modules/**',
       namedExports: {
-        'node_modules/payssion/index.js': ['Payssion'],
         'node_modules/react/index.js': [
           'cloneElement',
           'createContext',

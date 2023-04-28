@@ -1,7 +1,7 @@
 import { ChangeEvent, useContext } from 'react'
 
 import { Input, InputTitle, InputContainer } from '@/components/input'
-import { CardStateContext } from '@/contexts/card'
+import { CardStateContext } from '@/contexts'
 import { CardOwnerProps } from '@/pages/CardAdd/components/CardForm/types'
 import { useCardInfo } from '@/pages/hooks'
 

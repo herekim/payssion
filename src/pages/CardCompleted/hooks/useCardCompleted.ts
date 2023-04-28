@@ -1,6 +1,6 @@
 import { useRef, useContext } from 'react'
 
-import { CardStateContext } from '@/contexts/card'
+import { CardStateContext } from '@/contexts'
 import { getCardExpiredDateDisplay } from '@/domain'
 import { useCardList } from '@/pages/CardList/hooks'
 import { useCardInfo } from '@/pages/hooks'
