@@ -9,7 +9,7 @@ function CardList() {
   const { changeCurrentPage } = usePage()
 
   return (
-    <div className="root">
+    <div className="payssion-root">
       <div className="payssion-app text-center">
         <PageTitle addtionalClassName="mb-10" title="보유 카드" />
         {cardList?.map((card) => {

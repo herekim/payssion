@@ -14,7 +14,7 @@ export default {
 } as ComponentMeta<typeof NavigationButton>
 
 const Template: ComponentStory<typeof NavigationButton> = (props: NavigationButtonProps) => (
-  <div className="root">
+  <div className="payssion-root">
     <div className="app">
       <NavigationButton {...props} />
     </div>

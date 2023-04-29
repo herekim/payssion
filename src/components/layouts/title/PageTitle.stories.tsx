@@ -10,7 +10,7 @@ export default {
 } as ComponentMeta<typeof PageTitle>
 
 const Template: ComponentStory<typeof PageTitle> = (props) => (
-  <div className="root">
+  <div className="payssion-root">
     <div className="payssion-app">
       <PageTitle {...props} />
     </div>

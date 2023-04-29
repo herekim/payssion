@@ -5,7 +5,7 @@ import { CardProvider, ModalProvider, CardListProvider } from '@/providers'
 
 export default function CardDecorator(Story: ComponentType) {
   return (
-    <div className="root">
+    <div className="payssion-root">
       <div className="app">
         <ModalProvider>
           <CardListProvider>

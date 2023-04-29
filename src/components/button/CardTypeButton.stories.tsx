@@ -20,7 +20,7 @@ const Template: ComponentStory<typeof CardTypeButton> = ({
   color,
   backgroundColor,
 }: CardTypeButtonStoryProps) => (
-  <div className="root">
+  <div className="payssion-root">
     <div className="app">
       <CardTypeButton
         name={name}

@@ -1,4 +1,4 @@
-import './styles/index.css'
+import './styles/index.module.css'
 
 export { default as Payssion } from '@/Payssion'
 export { usePayssion } from '@/hooks'

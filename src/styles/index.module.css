@@ -1,9 +1,9 @@
-@import './card.css';
-@import './input.css';
-@import './button.css';
-@import './modal.css';
-@import './utils.css';
-@import './tooltip.css';
+@import './card.module.css';
+@import './input.module.css';
+@import './button.module.css';
+@import './modal.module.css';
+@import './utils.module.css';
+@import './tooltip.module.css';
 
 body {
   display: flex;
