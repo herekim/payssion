@@ -64,6 +64,7 @@ module.exports = {
     json(),
     postcss({
       extract: true,
+      output: 'dist/styles.css',
     }),
     terser(),
   ],
