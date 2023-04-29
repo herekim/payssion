@@ -1,5 +1,3 @@
-import '@/styles/index.css'
-
 import { Modal } from '@/components/modal'
 import Page from '@/Page'
 import { CardProvider, CardListProvider, ModalProvider } from '@/providers'
