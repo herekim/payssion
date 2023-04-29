@@ -63,8 +63,10 @@ module.exports = {
     typescript(),
     json(),
     postcss({
-      extract: true,
-      output: 'dist/styles.css',
+      extract: false, // 파일 경로를 전달합니다.
+      modules: true, // CSS 모듈을 사용하지 않습니다.
+      minimize: true, // CSS 파일을 최소화합니다.
+      sourceMap: true, // 소스 맵을 생성합니다.
     }),
     terser(),
   ],
