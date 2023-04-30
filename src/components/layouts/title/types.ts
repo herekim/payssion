@@ -6,6 +6,5 @@ type Title = (typeof PAGE_TITLES)[number]
 
 export interface PageTitleProps {
   title: Title
-  addtionalClassName?: string
   buttonElement?: ReactNode
 }

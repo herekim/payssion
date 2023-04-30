@@ -2,6 +2,7 @@ import { BackButton } from '@/components/button'
 import { PreviewCard } from '@/components/card'
 import { PageTitle } from '@/components/layouts'
 import { CardForm } from '@/pages/CardAdd/components/CardForm'
+import { PayssionApp } from '@/styles/layout.stitches'
 
 import { NavigationButtonWithValidation } from './components'
 import { useCardAdd } from './hooks'
@@ -22,7 +23,7 @@ function CardAdd() {
   } = useCardAdd()
 
   return (
-    <div className="payssion-app">
+    <PayssionApp>
       <PageTitle title="카드 추가" buttonElement={<BackButton />} />
       <PreviewCard />
       <CardForm>
@@ -40,7 +41,7 @@ function CardAdd() {
         onBeforeNavigate={onBeforeNavigate}
         isNavigationEnabled={isValidCardInfo}
       />
-    </div>
+    </PayssionApp>
   )
 }
 

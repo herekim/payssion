@@ -2,6 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { CardDecorator } from '@/decorator'
 import { useModal } from '@/hooks'
+import { DigitButton } from '@/styles/button.stitches'
 
 import CardTypeSelectionModal, { CheckModalProps } from './CardTypeSelectionModal'
 
@@ -14,9 +15,7 @@ export default {
 const Template: ComponentStory<typeof CardTypeSelectionModal> = (args: CheckModalProps) => {
   const { openModal } = useModal()
   return (
-    <button className="digit-button px-5" onClick={() => openModal({ element: <CardTypeSelectionModal {...args} /> })}>
-      Click Here
-    </button>
+    <DigitButton onClick={() => openModal({ element: <CardTypeSelectionModal {...args} /> })}>Click Here</DigitButton>
   )
 }
 

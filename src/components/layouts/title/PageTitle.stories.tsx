@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { BackButton } from '@/components/button'
+import { PayssionRoot, PayssionApp } from '@/styles/layout.stitches'
 
 import PageTitle from './PageTitle'
 
@@ -10,11 +11,11 @@ export default {
 } as ComponentMeta<typeof PageTitle>
 
 const Template: ComponentStory<typeof PageTitle> = (props) => (
-  <div className="payssion-root">
-    <div className="payssion-app">
+  <PayssionRoot>
+    <PayssionApp>
       <PageTitle {...props} />
-    </div>
-  </div>
+    </PayssionApp>
+  </PayssionRoot>
 )
 
 export const 카드추가 = Template.bind({})

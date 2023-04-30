@@ -15,6 +15,7 @@ const createPage = (page: PageType) => {
 
 const Page = () => {
   const { currentPage } = usePage()
+
   return createPage(currentPage)
 }
 

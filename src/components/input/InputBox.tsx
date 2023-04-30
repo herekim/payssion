@@ -1,11 +1,13 @@
+import type * as Stitches from '@stitches/react'
 import { PropsWithChildren } from 'react'
 
+import { InputBox as StyledInputBox } from '@/styles/input.stitches'
 interface InputBoxProps {
-  addtionalClassName?: string
+  css?: Stitches.CSS
 }
 
-const InputBox = ({ children, addtionalClassName }: PropsWithChildren<InputBoxProps>) => {
-  return <div className={`input-box ${addtionalClassName}`}>{children}</div>
+const InputBox = ({ children, css }: PropsWithChildren<InputBoxProps>) => {
+  return <StyledInputBox css={{ ...css }}>{children}</StyledInputBox>
 }
 
 export default InputBox

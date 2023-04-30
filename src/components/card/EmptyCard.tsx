@@ -1,6 +1,7 @@
 import { PropsWithChildren } from 'react'
 
 import { CardBox } from '@/components/card'
+import { EmptyCard as StyledEmptyCard } from '@/styles/card.stitches'
 
 interface EmptyCardProps {
   backgroundColor?: string
@@ -10,9 +11,14 @@ interface EmptyCardProps {
 function EmptyCard({ children, backgroundColor, color }: PropsWithChildren<EmptyCardProps>) {
   return (
     <CardBox>
-      <div className="empty-card" style={{ backgroundColor, color }}>
+      <StyledEmptyCard
+        css={{
+          backgroundColor,
+          color,
+        }}
+      >
         {children}
-      </div>
+      </StyledEmptyCard>
     </CardBox>
   )
 }

@@ -1,11 +1,12 @@
 import { PropsWithChildren } from 'react'
 
 import { CardBox } from '@/components/card'
+import { EmptyCard } from '@/styles/card.stitches'
 
 function Card({ children }: PropsWithChildren) {
   return (
     <CardBox>
-      <div className="empty-card">{children}</div>
+      <EmptyCard>{children}</EmptyCard>
     </CardBox>
   )
 }

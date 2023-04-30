@@ -3,6 +3,16 @@ import { ComponentStory, Meta } from '@storybook/react'
 import { CardBox } from '@/components/card'
 import { CardDecorator } from '@/decorator'
 import { CardType } from '@/domain'
+import {
+  SmallCard as StyledSmallCard,
+  CardTop,
+  CardMiddle,
+  SmallCardChip,
+  CardNumber,
+  CardBottom,
+  CardBottomInfo,
+  CardText,
+} from '@/styles/card.stitches'
 
 import SmallCard from './SmallCard'
 
@@ -21,7 +31,6 @@ export default {
 } as Meta
 
 const Template: ComponentStory<React.FC<SmallCardProps>> = ({
-  cardName,
   cardNumbers,
   cardOwner,
   cardExpiredDate,
@@ -29,23 +38,23 @@ const Template: ComponentStory<React.FC<SmallCardProps>> = ({
 }: SmallCardProps) => {
   return (
     <CardBox>
-      <div className="small-card" style={{ backgroundColor: bg, color }}>
-        <div className="card-top">
-          <span className="card-text">{cardName || name}</span>
-        </div>
-        <div className="card-middle">
-          <div className="small-card__chip" />
-        </div>
-        <div className="card-number">
-          <span className="card-text">{cardNumbers}</span>
-        </div>
-        <div className="card-bottom">
-          <div className="card-bottom__info">
-            <span className="card-text">{cardOwner}</span>
-            <span className="card-text">{cardExpiredDate}</span>
-          </div>
-        </div>
-      </div>
+      <StyledSmallCard style={{ backgroundColor: bg, color }}>
+        <CardTop>
+          <CardText>{name}</CardText>
+        </CardTop>
+        <CardMiddle>
+          <SmallCardChip />
+        </CardMiddle>
+        <CardNumber>
+          <CardText>{cardNumbers}</CardText>
+        </CardNumber>
+        <CardBottom>
+          <CardBottomInfo>
+            <CardText>{cardOwner}</CardText>
+            <CardText>{cardExpiredDate}</CardText>
+          </CardBottomInfo>
+        </CardBottom>
+      </StyledSmallCard>
     </CardBox>
   )
 }

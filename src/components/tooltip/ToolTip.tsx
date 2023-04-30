@@ -1,5 +1,7 @@
 import * as Tooltip from '@radix-ui/react-tooltip'
+import { styled } from '@stitches/react'
 
+import { IconButton, TooltipIcon, TooltipContent, TooltipArrow } from '@/styles/tooltip.stitches'
 export interface ToolTipProps {
   content: string
 }
@@ -9,19 +11,27 @@ const ToolTip = ({ content }: ToolTipProps) => {
     <Tooltip.Provider delayDuration={100}>
       <Tooltip.Root>
         <Tooltip.Trigger>
-          <span className="icon-button">
-            <i className="tooltip-icon">&#9432;</i>
-          </span>
+          <IconButton>
+            <TooltipIcon>&#9432;</TooltipIcon>
+          </IconButton>
         </Tooltip.Trigger>
         <Tooltip.Portal>
-          <Tooltip.Content className="tooltip-content">
+          <CustomTooltipContent>
             {content}
-            <Tooltip.Arrow className="tooltip-arrow" />
-          </Tooltip.Content>
+            <CustomTooltipArrow />
+          </CustomTooltipContent>
         </Tooltip.Portal>
       </Tooltip.Root>
     </Tooltip.Provider>
   )
 }
+
+const CustomTooltipContent = styled(Tooltip.Content, {
+  ...TooltipContent,
+})
+
+const CustomTooltipArrow = styled(Tooltip.Arrow, {
+  ...TooltipArrow,
+})
 
 export default ToolTip

@@ -21,5 +21,4 @@ Default.args = {
   placeholder: '카드 이름을 입력해주세요.',
   type: 'text',
   maxLength: 30,
-  addtionalClassName: '',
 }

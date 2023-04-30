@@ -1,5 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
+import { PayssionRoot, PayssionApp } from '@/styles/layout.stitches'
+
 import NavigationButton, { NavigationButtonProps } from './NavigationButton'
 
 export default {
@@ -14,11 +16,11 @@ export default {
 } as ComponentMeta<typeof NavigationButton>
 
 const Template: ComponentStory<typeof NavigationButton> = (props: NavigationButtonProps) => (
-  <div className="payssion-root">
-    <div className="app">
+  <PayssionRoot>
+    <PayssionApp>
       <NavigationButton {...props} />
-    </div>
-  </div>
+    </PayssionApp>
+  </PayssionRoot>
 )
 
 export const Default = Template.bind({})

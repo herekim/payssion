@@ -1,12 +1,18 @@
-import { PageTitleProps } from './types'
+import { PageTitle as StyledPageTitle } from '@/styles/layout.stitches'
+import { styled } from '@/styles/stitches.config'
 
-const PageTitle = ({ title, addtionalClassName, buttonElement }: PageTitleProps) => {
+import { PageTitleProps } from './types'
+const PageTitle = ({ title, buttonElement }: PageTitleProps) => {
   return (
-    <h2 className={`page-title ${addtionalClassName}`}>
+    <CustomPageTitle>
       {buttonElement}
       <span>{title}</span>
-    </h2>
+    </CustomPageTitle>
   )
 }
+
+const CustomPageTitle = styled(StyledPageTitle, {
+  marginBottom: ' 1rem;',
+})
 
 export default PageTitle

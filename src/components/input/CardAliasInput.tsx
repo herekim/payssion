@@ -1,11 +1,13 @@
+import { InputUnderline } from '@/styles/input.stitches'
+
 import { CardAliasInputProps } from './types'
 
 const CardAliasInput = ({ inputRef, defaultValue = '' }: CardAliasInputProps) => {
   return (
-    <input
+    <InputUnderline
       ref={inputRef}
       defaultValue={defaultValue}
-      className="input-underline w-75"
+      css={{ width: '100%' }}
       type="text"
       placeholder="카드 별칭 (선택)"
       maxLength={10}

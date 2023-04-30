@@ -11,8 +11,8 @@ const CardSecurityCode = ({ securityCodeRef, nextRef }: CardSecurityCodeProps) =
       <Input
         ref={securityCodeRef}
         type="password"
+        css={{ width: '25%' }}
         maxLength={3}
-        addtionalClassName="w-25"
         onInput={handleInputChange}
         onFocus={openVirtualKeyboard}
       />

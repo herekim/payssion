@@ -2,10 +2,11 @@ import { ComponentType } from 'react'
 
 import { Modal } from '@/components/modal'
 import { CardProvider, ModalProvider, CardListProvider } from '@/providers'
+import { PayssionRoot } from '@/styles/layout.stitches'
 
 export default function CardDecorator(Story: ComponentType) {
   return (
-    <div className="payssion-root">
+    <PayssionRoot>
       <ModalProvider>
         <CardListProvider>
           <CardProvider>
@@ -14,6 +15,6 @@ export default function CardDecorator(Story: ComponentType) {
           </CardProvider>
         </CardListProvider>
       </ModalProvider>
-    </div>
+    </PayssionRoot>
   )
 }

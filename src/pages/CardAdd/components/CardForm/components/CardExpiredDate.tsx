@@ -8,7 +8,7 @@ const CardExpiredDate = ({ expiredDateRef }: CardExpiredDateProps) => {
   return (
     <InputContainer>
       <InputTitle>만료일</InputTitle>
-      <InputBox addtionalClassName="w-50">
+      <InputBox css={{ width: '50%' }}>
         <Input ref={expiredDateRef.first} placeholder="MM" data-name="MM" onInput={handleInputChange} maxLength={2} />
         <Input ref={expiredDateRef.second} placeholder="YY" data-name="YY" onInput={handleInputChange} maxLength={2} />
       </InputBox>

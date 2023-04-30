@@ -4,6 +4,7 @@
 node_modules/
 public/
 src/
+origins/
 storybook-static/
 .eslintrc.json
 .gitignore

@@ -3,6 +3,16 @@ import { useContext } from 'react'
 import { EmptyCard } from '@/components/card'
 import { CardStateContext } from '@/contexts'
 import { getCardExpiredDateDisplay, getCardNumbersDisplay } from '@/domain'
+import {
+  CardTop,
+  CardMiddle,
+  SmallCardChip,
+  CardNumber,
+  CardBottom,
+  CardBottomInfo,
+  CardText,
+} from '@/styles/card.stitches'
+import { styled } from '@/styles/stitches.config'
 
 const PreviewCard = () => {
   const {
@@ -15,23 +25,27 @@ const PreviewCard = () => {
 
   return (
     <EmptyCard backgroundColor={bg} color={color}>
-      <div className="card-top">
-        <p className="font-sm">{name}</p>
-      </div>
-      <div className="card-middle">
-        <div className="small-card__chip" />
-        <div className="card-number">
+      <CardTop>
+        <CardName>{name}</CardName>
+      </CardTop>
+      <CardMiddle>
+        <SmallCardChip />
+        <CardNumber>
           <span>{getCardNumbersDisplay({ first, second, third, fourth })}</span>
-        </div>
-      </div>
-      <div className="card-bottom">
-        <div className="card-bottom__info">
-          <span className="card-text">{owner}</span>
-          <span className="card-text">{getCardExpiredDateDisplay({ expiredMonth, expiredYear })}</span>
-        </div>
-      </div>
+        </CardNumber>
+      </CardMiddle>
+      <CardBottom>
+        <CardBottomInfo>
+          <CardText>{owner}</CardText>
+          <CardText>{getCardExpiredDateDisplay({ expiredMonth, expiredYear })}</CardText>
+        </CardBottomInfo>
+      </CardBottom>
     </EmptyCard>
   )
 }
+
+const CardName = styled('p', {
+  fontSize: '0.8rem',
+})
 
 export default PreviewCard

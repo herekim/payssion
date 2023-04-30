@@ -5,8 +5,8 @@ import { PayssionContext, Page } from '@/contexts'
 const usePage = () => {
   const { currentPage, changePage, goToPrevPage } = useContext(PayssionContext)
 
-  const changeCurrentPage = (type: Page) => {
-    changePage(type)
+  const changeCurrentPage = (page: Page) => {
+    changePage(page)
   }
 
   const goToPreviousPage = () => {

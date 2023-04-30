@@ -2,6 +2,7 @@ import { Meta, Story } from '@storybook/react'
 import { useState } from 'react'
 
 import { CardDecorator } from '@/decorator'
+import { ToastButton } from '@/styles/button.stitches'
 
 import Toast, { ToastProps } from './Toast'
 
@@ -28,9 +29,7 @@ const Template: Story<ToastProps> = (args) => {
 
   return (
     <>
-      <button className="toast-button" onClick={handleClick}>
-        Toast 열기
-      </button>
+      <ToastButton onClick={handleClick}>Toast 열기</ToastButton>
       <Toast {...args} open={open} onOpenChange={setOpen} />
     </>
   )

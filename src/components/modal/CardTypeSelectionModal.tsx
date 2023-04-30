@@ -6,6 +6,7 @@ import { CARD_TYPES } from '@/contants'
 import { CardDispatchContext } from '@/contexts'
 import { CardBackgoundColor, CardColor } from '@/domain'
 import { useModal, useOutsideClick } from '@/hooks'
+import { styled } from '@/styles/stitches.config'
 
 export interface CheckModalProps {
   onAfterModalClose?: () => void
@@ -37,7 +38,7 @@ const CardTypeSelectionModal = ({ onAfterModalClose }: CheckModalProps) => {
     <DarkOverlay>
       <div ref={modalRef}>
         <BottomSheetContainer>
-          <div className="grid-repeat-4">
+          <CardTypeButtonContainer>
             {CARD_TYPES.map(({ name, bg, color }) => (
               <CardTypeButton
                 key={name}
@@ -47,11 +48,18 @@ const CardTypeSelectionModal = ({ onAfterModalClose }: CheckModalProps) => {
                 selectCardType={selectCardType}
               />
             ))}
-          </div>
+          </CardTypeButtonContainer>
         </BottomSheetContainer>
       </div>
     </DarkOverlay>
   )
 }
+
+const CardTypeButtonContainer = styled('div', {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(4, 1fr)',
+  gap: '0.5rem',
+  gridRowGap: '1.5rem',
+})
 
 export default CardTypeSelectionModal

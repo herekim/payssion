@@ -16,11 +16,7 @@ function CardCompleted() {
 
   return (
     <CardDetailsForm>
-      <CardDetailsForm.PageTitle
-        buttonElement={<BackButton />}
-        addtionalClassName="mb-10"
-        title="카드등록이 완료되었습니다."
-      />
+      <CardDetailsForm.PageTitle buttonElement={<BackButton />} title="카드등록이 완료되었습니다." />
       <CardDetailsForm.BigCard
         cardNumbers={cardNumbers}
         cardName={cardName}

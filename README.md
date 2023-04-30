@@ -73,3 +73,4 @@ Payment💳 + Mission🎯 = Payssion🔥
 ### 8. 기타
 
 - ref를 이용한 Context + 비제어 컴포넌트로 만든 폼의 가상 키보드 붙이기
+- NPM 배포하기

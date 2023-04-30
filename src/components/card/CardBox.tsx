@@ -1,7 +1,9 @@
 import { PropsWithChildren } from 'react'
 
+import { CardBox as StyledCardBox } from '@/styles/card.stitches'
+
 const CardBox = ({ children }: PropsWithChildren) => {
-  return <div className="card-box">{children}</div>
+  return <StyledCardBox>{children}</StyledCardBox>
 }
 
 export default CardBox

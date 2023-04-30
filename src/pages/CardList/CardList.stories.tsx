@@ -1,3 +1,4 @@
+import { styled } from '@stitches/react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { EmptyCard, SmallCard } from '@/components/card'
@@ -6,6 +7,7 @@ import { CardDecorator } from '@/decorator'
 import { getCardNumbersDisplay, getCardExpiredDateDisplay, CardInfomation } from '@/domain'
 import { usePage } from '@/hooks'
 import { useCardList } from '@/pages/CardList/hooks'
+import { CardNickname } from '@/styles/card.stitches'
 
 import CardList from './CardList'
 
@@ -34,30 +36,39 @@ const Template: ComponentStory<React.FC<CardListProps>> = (args: CardListProps) 
   const { cardList } = args
   return (
     <>
-      <PageTitle addtionalClassName="mb-10" title="보유 카드" />
-      {cardList?.map((card) => {
-        const { cardNumbers, owner, name, nickname, expiredMonth, expiredYear, cardType } = card
-        return (
-          <div key={card.nickname} onClick={() => onClickCard(card)}>
-            <SmallCard
-              cardName={name}
-              cardNumbers={getCardNumbersDisplay(cardNumbers)}
-              cardOwner={owner}
-              cardExpiredDate={getCardExpiredDateDisplay({ expiredMonth, expiredYear })}
-              cardType={cardType}
-            />
-            <span className="card-nickname">{nickname}</span>
-          </div>
-        )
-      })}
-      <button onClick={() => changeCurrentPage('CardAdd')}>
-        <EmptyCard>
-          <span>+</span>
-        </EmptyCard>
-      </button>
+      <PageTitle title="보유 카드" />
+      <CardListContainer>
+        {cardList?.map((card) => {
+          const { cardNumbers, owner, name, nickname, expiredMonth, expiredYear, cardType } = card
+          return (
+            <div key={card.nickname} onClick={() => onClickCard(card)}>
+              <SmallCard
+                cardName={name}
+                cardNumbers={getCardNumbersDisplay(cardNumbers)}
+                cardOwner={owner}
+                cardExpiredDate={getCardExpiredDateDisplay({ expiredMonth, expiredYear })}
+                cardType={cardType}
+              />
+              <CardNickname>{nickname}</CardNickname>
+            </div>
+          )
+        })}
+        <button onClick={() => changeCurrentPage('CardAdd')}>
+          <EmptyCard>
+            <span>+</span>
+          </EmptyCard>
+        </button>
+      </CardListContainer>
     </>
   )
 }
+
+const CardListContainer = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+})
 
 const CARD_LIST: CardInfomation[] = [
   {

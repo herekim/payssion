@@ -1,7 +1,9 @@
 import { PropsWithChildren } from 'react'
 
+import { InputTitle as StyledInputTitme } from '@/styles/input.stitches'
+
 const InputTitle = ({ children }: PropsWithChildren) => {
-  return <span className="input-title">{children}</span>
+  return <StyledInputTitme>{children}</StyledInputTitme>
 }
 
 export default InputTitle

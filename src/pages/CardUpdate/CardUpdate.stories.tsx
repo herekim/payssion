@@ -39,11 +39,7 @@ const Template: ComponentStory<React.FC<CardUpdateProps>> = ({
   return (
     <>
       <CardDetailsForm>
-        <CardDetailsForm.PageTitle
-          buttonElement={<BackButton />}
-          addtionalClassName="mb-10"
-          title="카드 목록으로 돌아가기"
-        />
+        <CardDetailsForm.PageTitle buttonElement={<BackButton />} title="카드 목록으로 돌아가기" />
         <CardDetailsForm.BigCard
           onClickDeleteButton={onClickDeleteButton}
           cardNumbers={cardNumbers}

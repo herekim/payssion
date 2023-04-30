@@ -1,7 +1,7 @@
 import { Input, InputTitle, InputContainer } from '@/components/input'
 import { useCardPassword } from '@/pages/CardAdd/components/CardForm/hooks'
 import { CardPasswordProps, CardPasswordOrder } from '@/pages/CardAdd/components/CardForm/types'
-
+import { InputPasswordContainer } from '@/styles/input.stitches'
 const CardPassword = ({ passwordRef }: CardPasswordProps) => {
   const onFocusChange = (order: CardPasswordOrder) => {
     passwordRef[order].current?.focus()
@@ -12,11 +12,11 @@ const CardPassword = ({ passwordRef }: CardPasswordProps) => {
   return (
     <InputContainer>
       <InputTitle>카드 비밀번호</InputTitle>
-      <div className="input-password-container">
+      <InputPasswordContainer>
         <Input
           ref={passwordRef.first}
           data-name="first"
-          addtionalClassName="w-15"
+          css={{ width: '15%' }}
           type="password"
           maxLength={1}
           onInput={handleInputChange}
@@ -25,15 +25,15 @@ const CardPassword = ({ passwordRef }: CardPasswordProps) => {
         <Input
           ref={passwordRef.second}
           data-name="second"
-          addtionalClassName="w-15"
+          css={{ width: '15%' }}
           type="password"
           maxLength={1}
           onInput={handleInputChange}
           onFocus={() => openVirtualKeyboard('second')}
         />
-        <Input addtionalClassName="w-15 bg-white" type="password" value="x" readOnly />
-        <Input addtionalClassName="w-15 bg-white" type="password" value="x" readOnly />
-      </div>
+        <Input css={{ width: '15%', backgroundColor: 'white' }} type="password" value="x" readOnly />
+        <Input css={{ width: '15%', backgroundColor: 'white' }} type="password" value="x" readOnly />
+      </InputPasswordContainer>
     </InputContainer>
   )
 }

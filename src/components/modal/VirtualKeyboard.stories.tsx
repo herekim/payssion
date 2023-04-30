@@ -2,6 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { CardDecorator } from '@/decorator'
 import { useModal } from '@/hooks'
+import { DigitButton } from '@/styles/button.stitches'
 
 import VirtualKeyboard, { VirtualKeyboardProps } from './VirtualKeyboard'
 
@@ -14,13 +15,7 @@ export default {
 const Template: ComponentStory<typeof VirtualKeyboard> = (args: VirtualKeyboardProps) => {
   const { openModal } = useModal()
 
-  return (
-    <div className="flex items-center gap-2">
-      <button className="digit-button px-5" onClick={() => openModal({ element: <VirtualKeyboard {...args} /> })}>
-        Click Here
-      </button>
-    </div>
-  )
+  return <DigitButton onClick={() => openModal({ element: <VirtualKeyboard {...args} /> })}>Click Here</DigitButton>
 }
 
 export const Default = Template.bind({})

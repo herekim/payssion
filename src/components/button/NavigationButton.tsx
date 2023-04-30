@@ -1,5 +1,6 @@
 import { Page } from '@/contexts'
 import { usePage } from '@/hooks'
+import { ButtonBox, ButtonText } from '@/styles/button.stitches'
 
 export interface NavigationButtonProps {
   additionalClassNames?: string
@@ -9,13 +10,7 @@ export interface NavigationButtonProps {
   isNavigationEnabled?: () => boolean
 }
 
-const NavigationButton = ({
-  additionalClassNames = '',
-  text,
-  onBeforeNavigate,
-  to,
-  isNavigationEnabled = () => true,
-}: NavigationButtonProps) => {
+const NavigationButton = ({ text, onBeforeNavigate, to, isNavigationEnabled = () => true }: NavigationButtonProps) => {
   const { changeCurrentPage } = usePage()
 
   const goToSpecifiedPage = async (to: Page) => {
@@ -28,11 +23,9 @@ const NavigationButton = ({
   }
 
   return (
-    <div className={`button-box ${additionalClassNames}`}>
-      <button onClick={() => goToSpecifiedPage(to)} className="button-text">
-        {text}
-      </button>
-    </div>
+    <ButtonBox>
+      <ButtonText onClick={() => goToSpecifiedPage(to)}>{text}</ButtonText>
+    </ButtonBox>
   )
 }
 

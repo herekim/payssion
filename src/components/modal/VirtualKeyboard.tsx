@@ -3,7 +3,8 @@ import { useRef, ComponentType } from 'react'
 import { BottomSheetContainer } from '@/components/modal'
 import { getRandomVirtualDigits } from '@/domain'
 import { useModal, useOutsideClick } from '@/hooks'
-
+import { DigitButton } from '@/styles/button.stitches'
+import { styled } from '@/styles/stitches.config'
 export interface VirtualKeyboardProps {
   onKeyPress: (value: string) => void
 }
@@ -19,16 +20,23 @@ const VirtualKeyboard = ({ onKeyPress }: VirtualKeyboardProps) => {
   return (
     <div ref={modalRef}>
       <BottomSheetContainer>
-        <div className="grid-repeat-3 w-100 px-5">
+        <DigitButtonContainer>
           {getRandomVirtualDigits().map((digit) => (
-            <button key={digit} type="button" className="digit-button" onClick={() => onKeyPress(String(digit))}>
+            <DigitButton key={digit} onClick={() => onKeyPress(String(digit))}>
               {digit}
-            </button>
+            </DigitButton>
           ))}
-        </div>
+        </DigitButtonContainer>
       </BottomSheetContainer>
     </div>
   )
 }
 
+const DigitButtonContainer = styled('div', {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(3, 1fr)',
+  width: '100%',
+  padding: '0 1.25rem',
+  gap: '0.5rem',
+})
 export default VirtualKeyboard

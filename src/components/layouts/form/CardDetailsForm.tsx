@@ -5,6 +5,8 @@ import { BigCard } from '@/components/card'
 import { CardAliasInput, InputContainer } from '@/components/input'
 import { PageTitle } from '@/components/layouts'
 import { getCardDetailsFormSubElement } from '@/domain'
+import { PayssionApp } from '@/styles/layout.stitches'
+import { styled } from '@/styles/stitches.config'
 
 const CardDetailsForm = ({ children }: PropsWithChildren) => {
   const bigCard = getCardDetailsFormSubElement(children, BigCard)
@@ -12,14 +14,29 @@ const CardDetailsForm = ({ children }: PropsWithChildren) => {
   const NavigationButton = getCardDetailsFormSubElement(children, NavigationTextButton)
   const cardAliasInput = getCardDetailsFormSubElement(children, CardAliasInput)
   return (
-    <div className="app flex-column-center">
-      <div className="flex-center">{pageTitle}</div>
+    <CustomPayssionApp>
+      <Title>{pageTitle}</Title>
       {bigCard}
-      <InputContainer addtionalClassName="flex-center w-100">{cardAliasInput}</InputContainer>
+      <InputContainer
+        css={{
+          flexCenter: 'center',
+          width: '100%',
+        }}
+      >
+        {cardAliasInput}
+      </InputContainer>
       {NavigationButton}
-    </div>
+    </CustomPayssionApp>
   )
 }
+
+const CustomPayssionApp = styled(PayssionApp, {
+  flexColumnCenter: 'center',
+})
+
+const Title = styled('div', {
+  flexCenter: 'center',
+})
 
 CardDetailsForm.PageTitle = PageTitle
 CardDetailsForm.BigCard = BigCard
