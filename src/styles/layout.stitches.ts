@@ -5,25 +5,25 @@ export const PayssionRoot = styled('div', {
   width: '375px',
   minWidth: '375px',
   height: '700px',
-  // position: 'relative',
   borderRadius: '15px',
   overflowY: 'scroll',
 
   position: 'fixed',
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
   zIndex: 1000,
-  // backgroundColor: 'rgba(0, 0, 0, 0.5)',
+
+  '&::-webkit-scrollbar': {
+    width: 0, // Chrome, Safari, Edge
+  },
+  scrollbarWidth: 'none', // Firefox
+  msOverflowStyle: 'none', // IE
 })
 
 export const PayssionApp = styled('div', {
   height: '100%',
-  padding: '24px',
+  padding: '0 1.5rem',
 })
 
 export const PageTitle = styled('h1', {

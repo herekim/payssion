@@ -1,9 +1,5 @@
 import { styled, keyframes } from '@/styles/stitches.config'
 
-export const Button = styled('button', {
-  all: 'unset',
-})
-
 export const TooltipIcon = styled('div', {
   color: 'lightgray',
   fontSize: '18px',
@@ -28,7 +24,7 @@ export const TooltipArrow = styled('div', {
   fill: 'white',
 })
 
-export const IconButton = styled('button', {
+export const IconButton = styled('div', {
   fontFamily: 'inherit',
   borderRadius: '100%',
   height: '35px',

@@ -27,7 +27,9 @@ const PayssionProvider = ({ children }: ProviderProps) => {
     setIsOpen(true)
   }
 
-  const closePayment = () => {}
+  const closePayment = () => {
+    setIsOpen(false)
+  }
 
   const processPayment = () => {
     setTimeout(() => {

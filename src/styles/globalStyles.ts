@@ -21,6 +21,7 @@ export const globalStyles = globalCss({
   input: {
     fontSize: '16px',
   },
+
   'article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section': {
     display: 'block',
   },
@@ -41,5 +42,6 @@ export const globalStyles = globalCss({
     background: 'none',
     border: 'none',
     cursor: 'pointer',
+    padding: 0,
   },
 })

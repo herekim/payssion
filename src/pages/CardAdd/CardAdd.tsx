@@ -8,8 +8,6 @@ import { NavigationButtonWithValidation } from './components'
 import { useCardAdd } from './hooks'
 
 function CardAdd() {
-  // Todo: 핸들러 각 컴포넌트에서 불러오고 Props에서 지워주기
-
   const {
     numbersRef,
     passwordRef,

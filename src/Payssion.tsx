@@ -1,3 +1,4 @@
+import { Header } from '@/components/header'
 import { Modal } from '@/components/modal'
 import Page from '@/Page'
 import { CardProvider, CardListProvider, ModalProvider } from '@/providers'
@@ -13,6 +14,7 @@ function Payssion() {
       <CardListProvider>
         <CardProvider>
           <PayssionRoot>
+            <Header />
             <Page />
             <Modal />
           </PayssionRoot>
