@@ -23,7 +23,7 @@ export const PayssionRoot = styled('div', {
 
 export const PayssionApp = styled('div', {
   height: '100%',
-  padding: '0 1.5rem',
+  padding: '1.5rem',
 })
 
 export const PageTitle = styled('h1', {
