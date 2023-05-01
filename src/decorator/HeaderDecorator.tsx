@@ -1,22 +1,20 @@
 import { ComponentType } from 'react'
 
-// import { Header } from '@/components/header'
+import { Header } from '@/components/header'
 import { Modal } from '@/components/modal'
 import { CardProvider, ModalProvider, CardListProvider } from '@/providers'
 import { PayssionRoot, PayssionApp } from '@/styles/layout.stitches'
-import { styled } from '@/styles/stitches.config'
 
-export default function CardDecorator(Story: ComponentType) {
+export default function HeaderDecorator(Story: ComponentType) {
   return (
     <PayssionRoot>
+      <Header />
       <PayssionApp>
         <ModalProvider>
           <CardListProvider>
             <CardProvider>
-              <StoryContainer>
-                <Story />
-                <Modal />
-              </StoryContainer>
+              <Story />
+              <Modal />
             </CardProvider>
           </CardListProvider>
         </ModalProvider>
@@ -24,7 +22,3 @@ export default function CardDecorator(Story: ComponentType) {
     </PayssionRoot>
   )
 }
-
-const StoryContainer = styled('div', {
-  paddingTop: '2rem',
-})

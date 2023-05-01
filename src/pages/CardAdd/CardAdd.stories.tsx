@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { BackButton } from '@/components/button'
 import { PreviewCard } from '@/components/card'
 import { PageTitle } from '@/components/layouts'
-import { CardDecorator } from '@/decorator'
+import { HeaderDecorator } from '@/decorator'
 import { NavigationButtonWithValidation } from '@/pages/CardAdd/components'
 import { CardForm } from '@/pages/CardAdd/components/CardForm'
 import { useCardAdd } from '@/pages/CardAdd/hooks'
@@ -13,7 +13,7 @@ import CardAdd from './CardAdd'
 export default {
   title: 'Pages/CardAdd',
   component: CardAdd,
-  decorators: [CardDecorator],
+  decorators: [HeaderDecorator],
 } as ComponentMeta<typeof CardAdd>
 
 const Template: ComponentStory<typeof CardAdd> = () => {

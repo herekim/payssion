@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { EmptyCard, SmallCard } from '@/components/card'
 import { PageTitle } from '@/components/layouts'
-import { CardDecorator } from '@/decorator'
+import { HeaderDecorator } from '@/decorator'
 import { getCardNumbersDisplay, getCardExpiredDateDisplay, CardInfomation } from '@/domain'
 import { usePage } from '@/hooks'
 import { useCardList } from '@/pages/CardList/hooks'
@@ -19,7 +19,7 @@ interface CardListProps {
 export default {
   title: 'Pages/CardList',
   component: CardList,
-  decorators: [CardDecorator],
+  decorators: [HeaderDecorator],
   argTypes: {
     cardList: {
       control: {

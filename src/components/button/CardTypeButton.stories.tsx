@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
+import { CardDecorator } from '@/decorator'
 import { CardBackgoundColor, CardColor } from '@/domain'
-import { PayssionRoot, PayssionApp } from '@/styles/layout.stitches'
 
 import CardTypeButton from './CardTypeButton'
 
@@ -14,6 +14,7 @@ interface CardTypeButtonStoryProps {
 export default {
   title: 'Components/Button/CardTypeButton',
   component: CardTypeButton,
+  decorators: [CardDecorator],
 } as ComponentMeta<typeof CardTypeButton>
 
 const Template: ComponentStory<typeof CardTypeButton> = ({
@@ -21,18 +22,12 @@ const Template: ComponentStory<typeof CardTypeButton> = ({
   color,
   backgroundColor,
 }: CardTypeButtonStoryProps) => (
-  <PayssionRoot>
-    <PayssionApp>
-      <CardTypeButton
-        name={name}
-        backgroundColor={backgroundColor}
-        color={color}
-        selectCardType={(name: string, backgroundColor: string, color: string) =>
-          console.log(name, backgroundColor, color)
-        }
-      />
-    </PayssionApp>
-  </PayssionRoot>
+  <CardTypeButton
+    name={name}
+    backgroundColor={backgroundColor}
+    color={color}
+    selectCardType={(name: string, backgroundColor: string, color: string) => console.log(name, backgroundColor, color)}
+  />
 )
 
 const CARD_TYPES: Record<string, CardTypeButtonStoryProps> = {
