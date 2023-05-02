@@ -31,6 +31,7 @@ const StyledAgreement = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
+  marginBottom: '4rem',
 })
 
 const StyledInfoTitle = styled(InfoTitle, {
@@ -59,7 +60,7 @@ const Detail = styled('button', {
   textDecoration: 'underline',
 })
 
-const Label = styled('label', {
+const Label = styled('p', {
   display: 'flex',
   alignItems: 'center',
   gap: '0.5rem',

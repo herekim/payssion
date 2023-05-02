@@ -4,9 +4,6 @@ import Slider, { Settings } from 'react-slick'
 import { PrevArrow, NextArrow } from '@/components/button'
 import { styled } from '@/styles/stitches.config'
 
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-
 interface SlickProps {
   changeCurrentCard: (index: number) => void
 }
