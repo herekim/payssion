@@ -11,11 +11,6 @@ export const globalStyles = globalCss({
       verticalAlign: 'baseline',
     },
   body: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '0.5rem',
-    alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: '#f5f5f5',
   },
   input: {

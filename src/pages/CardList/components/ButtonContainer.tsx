@@ -20,9 +20,10 @@ const ButtonContainer = ({ onClickCancelButton, onClickPayButton, disabled }: Bu
 export default ButtonContainer
 
 const StyledButtonContainer = styled('div', {
-  position: 'sticky',
+  position: 'absolute',
   bottom: 0,
   left: 0,
+  right: 0,
   height: '2rem',
   display: 'flex',
   justifyContent: 'space-around',
