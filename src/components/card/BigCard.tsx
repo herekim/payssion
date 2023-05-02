@@ -1,4 +1,4 @@
-import { CardBox, BigCardProps } from '@/components/card'
+import { BigCardProps } from '@/components/card'
 import {
   BigCard as StyledBigCard,
   CardTop,
@@ -10,6 +10,8 @@ import {
   CardBottom,
   CardBottomInfo,
 } from '@/styles/card.stitches'
+
+import CardBox from './CardBox'
 
 const BigCard = ({
   onClickDeleteButton,

@@ -1,4 +1,3 @@
-import { CardBox } from '@/components/card'
 import { CardType } from '@/domain'
 import {
   SmallCard as StyledSmallCard,
@@ -10,6 +9,8 @@ import {
   CardBottomInfo,
   CardText,
 } from '@/styles/card.stitches'
+
+import CardBox from './CardBox'
 
 interface SmallCardProps {
   cardName: string

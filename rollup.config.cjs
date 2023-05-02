@@ -1,14 +1,17 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
 
-const alias = require('rollup-plugin-alias')
+const alias = require('@rollup/plugin-alias')
 const commonjs = require('rollup-plugin-commonjs')
 const json = require('rollup-plugin-json')
 const resolve = require('rollup-plugin-node-resolve')
 const peerDepsExternal = require('rollup-plugin-peer-deps-external')
 const postcss = require('rollup-plugin-postcss')
+const svg = require('rollup-plugin-svg')
 const { terser } = require('rollup-plugin-terser')
 const typescript = require('rollup-plugin-typescript2')
+
+const projectRootDir = path.resolve(__dirname)
 
 module.exports = {
   input: 'src/index.ts',
@@ -26,7 +29,7 @@ module.exports = {
   ],
   plugins: [
     alias({
-      '@': path.resolve(__dirname, 'src/'),
+      entries: [{ find: '@', replacement: path.resolve(projectRootDir, 'src') }],
     }),
     commonjs({
       include: 'node_modules/**',
@@ -68,6 +71,7 @@ module.exports = {
       minimize: true, // CSS 파일을 최소화합니다.
       sourceMap: true, // 소스 맵을 생성합니다.
     }),
+    svg({ base64: true }),
     terser(),
   ],
 }

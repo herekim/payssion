@@ -1,7 +1,8 @@
 import { PropsWithChildren } from 'react'
 
-import { CardBox } from '@/components/card'
 import { EmptyCard } from '@/styles/card.stitches'
+
+import CardBox from './CardBox'
 
 function Card({ children }: PropsWithChildren) {
   return (

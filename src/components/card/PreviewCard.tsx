@@ -1,6 +1,5 @@
 import { useContext } from 'react'
 
-import { EmptyCard } from '@/components/card'
 import { CardStateContext } from '@/contexts'
 import { getCardExpiredDateDisplay, getCardNumbersDisplay } from '@/domain'
 import {
@@ -13,6 +12,8 @@ import {
   CardText,
 } from '@/styles/card.stitches'
 import { styled } from '@/styles/stitches.config'
+
+import EmptyCard from './EmptyCard'
 
 const PreviewCard = () => {
   const {

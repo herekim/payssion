@@ -1,7 +1,8 @@
 import { useRef, useContext } from 'react'
 
 import { CardTypeButton } from '@/components/button'
-import { BottomSheetContainer, DarkOverlay } from '@/components/modal'
+import BottomSheetContainer from '@/components/modal/BottomSheetContainer'
+import DarkOverlay from '@/components/modal/DarkOverlay'
 import { CARD_TYPES } from '@/contants'
 import { CardDispatchContext } from '@/contexts'
 import { CardBackgoundColor, CardColor } from '@/domain'

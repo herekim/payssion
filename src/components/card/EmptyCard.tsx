@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react'
 
-import { CardBox } from '@/components/card'
+import CardBox from '@/components/card/CardBox'
 import { EmptyCard as StyledEmptyCard } from '@/styles/card.stitches'
 
 interface EmptyCardProps {

@@ -1,6 +1,6 @@
 import { useRef, ComponentType } from 'react'
 
-import { BottomSheetContainer } from '@/components/modal'
+import BottomSheetContainer from '@/components/modal/BottomSheetContainer'
 import { getRandomVirtualDigits } from '@/domain'
 import { useModal, useOutsideClick } from '@/hooks'
 import { DigitButton } from '@/styles/button.stitches'
