@@ -16,7 +16,6 @@ const StyledHeader = styled('header', {
   position: 'sticky',
   top: 0,
   left: 0,
-  height: '2rem',
   backgroundColor: 'rgba(255, 255, 255, 0.7)',
   display: 'flex',
   justifyContent: 'start',

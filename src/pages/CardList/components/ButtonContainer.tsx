@@ -24,13 +24,13 @@ const StyledButtonContainer = styled('div', {
   bottom: 0,
   left: 0,
   right: 0,
-  height: '2rem',
   display: 'flex',
   justifyContent: 'space-around',
   alignItems: 'center',
   gap: '1rem',
   padding: '1rem',
-  backgroundColor: 'rgba(255, 255, 255, 0.7)',
+  backgroundColor: 'rgba(255, 255, 255, 0.9)',
+  zIndex: 10,
 })
 
 const Button = styled('button', {
@@ -39,6 +39,7 @@ const Button = styled('button', {
   borderRadius: '0.5rem',
   backgroundColor: '#e2e2e2',
   color: 'white',
+  textAlign: 'center',
   variants: {
     disabled: {
       true: {

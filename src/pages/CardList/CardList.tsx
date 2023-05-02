@@ -47,7 +47,6 @@ function CardList() {
         <PaymentAmount amount={paymentAmount} />
         <Agreement checked={checked} onClick={onClickAgreement} />
       </PayssionApp>
-
       <ButtonContainer
         onClickCancelButton={onClickCancelButton}
         onClickPayButton={processPayment}
