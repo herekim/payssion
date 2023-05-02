@@ -48,8 +48,8 @@ function CardList() {
         <PaymentAmount>
           <StyledInfoTitle>결제금액</StyledInfoTitle>
           <TotalPayment>
-            <p>총 결제금액</p>
-            <p>0원</p>
+            <UnderLineText>총 결제금액</UnderLineText>
+            <UnderLineText>0원</UnderLineText>
           </TotalPayment>
         </PaymentAmount>
         <Agreement>
@@ -189,5 +189,23 @@ const Button = styled('button', {
   },
   defaultVariants: {
     disabled: false,
+  },
+})
+
+const UnderLineText = styled('p', {
+  position: 'relative',
+
+  '&::after': {
+    content: '',
+    display: 'block',
+    position: 'absolute',
+    left: '-0.2rem',
+    right: '-0.2rem',
+    bottom: '0',
+    height: '0.5rem',
+    backgroundColor: '$main',
+    opacity: 0.4,
+    zIndex: -1,
+    borderRadius: '0.2rem',
   },
 })
