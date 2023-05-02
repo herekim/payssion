@@ -10,7 +10,7 @@ const ButtonContainer = ({ onClickCancelButton, onClickPayButton, disabled }: Bu
   return (
     <StyledButtonContainer>
       <Button onClick={onClickCancelButton}>취소하기</Button>
-      <Button backgroundColor="main" disabled={disabled} onClick={onClickPayButton}>
+      <Button backgroundColor="main" disabled={disabled} onClick={disabled ? undefined : onClickPayButton}>
         결제하기
       </Button>
     </StyledButtonContainer>
