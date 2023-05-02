@@ -5,9 +5,6 @@ import { CardProvider, CardListProvider, ModalProvider } from '@/providers'
 import { globalStyles } from '@/styles/globalStyles'
 import { PayssionRoot } from '@/styles/layout.stitches'
 
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-
 function Payssion() {
   globalStyles()
 

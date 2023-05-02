@@ -22,9 +22,9 @@ const Slick = ({ children, changeCurrentCard }: PropsWithChildren<SlickProps>) =
   )
   return (
     <SlideContainer>
-      <Slider ref={sliderRef} {...settings}>
+      <StyledSlider ref={sliderRef} {...settings}>
         {children}
-      </Slider>
+      </StyledSlider>
     </SlideContainer>
   )
 }
@@ -33,4 +33,40 @@ export default Slick
 
 const SlideContainer = styled('div', {
   width: '80%',
+})
+
+const StyledSlider = styled(Slider, {
+  position: 'relative',
+  display: 'block',
+  boxSizing: 'border-box',
+  userSelect: 'none',
+  touchAction: 'pan-y',
+  WebkitTapHighlightColor: 'transparent',
+
+  '& .slick-list': {
+    position: 'relative',
+    display: 'block',
+    overflow: 'hidden',
+    margin: 0,
+    padding: 0,
+  },
+
+  '& .slick-track': {
+    position: 'relative',
+    top: 0,
+    left: 0,
+    display: 'block',
+    margin: '0 auto',
+  },
+
+  '& .slick-slide': {
+    // display: 'none',
+    float: 'left',
+    height: '100%',
+    minHeight: '1px',
+  },
+
+  '& .slick-arrow': {
+    display: 'none',
+  },
 })

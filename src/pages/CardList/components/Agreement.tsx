@@ -60,8 +60,15 @@ const Detail = styled('button', {
   textDecoration: 'underline',
 })
 
-const Label = styled('p', {
+const Label = styled('label', {
   display: 'flex',
   alignItems: 'center',
   gap: '0.5rem',
+
+  '& input[type="checkbox"]': {
+    width: 'auto',
+    height: 'auto',
+    opacity: 1,
+    marginRight: '4px',
+  },
 })
