@@ -17,8 +17,9 @@ const Agreement = ({ checked, onClick }: AgreementProps) => {
           <Detail>상세보기</Detail>
         </TransactionAgreement>
         <Label>
-          주문 내용을 확인하였으며, 정보 제공 등에 확인합니다.{' '}
-          <input type="checkbox" checked={checked} onChange={onClick} />
+          <p>주문 내용을 확인하였으며, 정보 제공 등에 확인합니다.</p>
+          <input type="checkbox" id="check1" checked={checked} onChange={onClick} />
+          <label htmlFor="check1"></label>
         </Label>
       </CheckBoxContainer>
     </StyledAgreement>
@@ -60,15 +61,32 @@ const Detail = styled('button', {
   textDecoration: 'underline',
 })
 
-const Label = styled('label', {
+const Label = styled('p', {
   display: 'flex',
   alignItems: 'center',
   gap: '0.5rem',
 
   '& input[type="checkbox"]': {
-    width: 'auto',
-    height: 'auto',
-    opacity: 1,
-    marginRight: '4px',
+    display: 'none',
+  },
+
+  '& input[type="checkbox"] + label': {
+    display: 'inline-block',
+    width: '1rem',
+    height: '1rem',
+    border: '1px solid #707070',
+    borderRadius: '0.2rem',
+    position: 'relative',
+  },
+
+  '& input:checked + label::after': {
+    content: '"✓"',
+    fontSize: '1rem',
+    width: '1rem',
+    height: '1rem',
+    textAlign: 'center',
+    position: 'absolute',
+    left: 0,
+    top: 0,
   },
 })
