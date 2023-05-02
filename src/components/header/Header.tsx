@@ -25,11 +25,11 @@ const StyledHeader = styled('header', {
   fontWeight: 'bold',
   boxShadow: 'rgba(149, 157, 165, 0.1) 0px 8px 24px',
   borderRadius: '15px',
+  zIndex: 10,
 })
 
 const Stick = styled('span', {
-  //갈색
-  color: '#8B4513',
+  ttcolor: '#8B4513',
   fontWeight: 'bold',
 })
 
