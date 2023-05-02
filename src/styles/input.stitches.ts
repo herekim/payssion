@@ -37,6 +37,7 @@ export const InputBasic = styled('input', {
   borderColor: '#9ca3af',
   border: 'none',
   borderRadius: '0.25rem',
+  color: '#000000',
 })
 
 export const InputUnderline = styled('input', {

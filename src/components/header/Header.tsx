@@ -1,9 +1,10 @@
+import { ReactComponent as Logo } from '@/assets/logo.svg'
 import { styled } from '@/styles/stitches.config'
 
 const Header = () => {
   return (
     <StyledHeader>
-      <img src="logo.svg" width={25} height={25} alt="Payssion Logo" />
+      <Logo width={25} height={25} />
       <Title>
         Payssion <Stick>|</Stick> 결제
       </Title>

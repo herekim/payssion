@@ -29,6 +29,10 @@ function CardList() {
     setCurrentCard(index)
   }
 
+  const onClickCancelButton = () => {
+    closePayment()
+  }
+
   return (
     <>
       <PayssionApp>
@@ -44,7 +48,7 @@ function CardList() {
         <Agreement checked={checked} onClick={onClickAgreement} />
       </PayssionApp>
       <ButtonContainer
-        onClickCancelButton={closePayment}
+        onClickCancelButton={onClickCancelButton}
         onClickPayButton={processPayment}
         disabled={!isCurrentCardPresent || !checked}
       />

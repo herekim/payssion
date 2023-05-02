@@ -2,9 +2,9 @@ import { styled } from '@/styles/stitches.config'
 
 export const PayssionRoot = styled('div', {
   backgroundColor: '#fff',
-  width: '375px',
+  width: '30%',
   minWidth: '375px',
-  height: '700px',
+  height: '90%',
   borderRadius: '15px',
   overflowY: 'scroll',
 

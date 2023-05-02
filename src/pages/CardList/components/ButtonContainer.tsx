@@ -10,7 +10,7 @@ const ButtonContainer = ({ onClickCancelButton, onClickPayButton, disabled }: Bu
   return (
     <StyledButtonContainer>
       <Button onClick={onClickCancelButton}>취소하기</Button>
-      <Button backgroundColor="main" color="white" disabled={disabled} onClick={onClickPayButton}>
+      <Button backgroundColor="main" disabled={disabled} onClick={onClickPayButton}>
         결제하기
       </Button>
     </StyledButtonContainer>
@@ -48,9 +48,6 @@ const Button = styled('button', {
       },
     },
     color: {
-      white: {
-        color: '#ffffff',
-      },
       black: {
         color: '#000000',
       },
