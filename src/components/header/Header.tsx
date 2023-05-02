@@ -29,7 +29,7 @@ const StyledHeader = styled('header', {
 })
 
 const Stick = styled('span', {
-  ttcolor: '#8B4513',
+  color: '$main',
   fontWeight: 'bold',
 })
 

@@ -1,7 +1,11 @@
 import { createStitches } from '@stitches/react'
 
 export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme, config } = createStitches({
-  theme: {},
+  theme: {
+    colors: {
+      main: '#805A40',
+    },
+  },
   utils: {
     flexCenter: () => () => ({
       display: 'flex',
