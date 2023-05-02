@@ -9,12 +9,13 @@ interface CardListSlickProps {
   cardList: CardInfomation[]
   goToCardAddPage: () => void
   onClickCard: (card: CardInfomation) => void
+  changeCurrentCard: (index: number) => void
 }
 
-const CardListSlick = ({ cardList, goToCardAddPage, onClickCard }: CardListSlickProps) => {
+const CardListSlick = ({ cardList, goToCardAddPage, onClickCard, changeCurrentCard }: CardListSlickProps) => {
   return (
     <CardListContainer>
-      <Slick>
+      <Slick changeCurrentCard={changeCurrentCard}>
         {cardList?.map((card) => {
           const { cardNumbers, owner, name, nickname, expiredMonth, expiredYear, cardType } = card
           return (

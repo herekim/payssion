@@ -11,6 +11,7 @@ const PayssionProvider = ({ children }: ProviderProps) => {
   const [pageHistory, setPageHistory] = useState<Page[]>([])
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [isSuceess, setIsSuccess] = useState<boolean>(false)
+  const [paymentAmount, setPaymentAmount] = useState<number>(0)
 
   const changePage = (type: Page) => {
     setPageHistory([...pageHistory, currentPage])
@@ -34,7 +35,12 @@ const PayssionProvider = ({ children }: ProviderProps) => {
   const processPayment = () => {
     setTimeout(() => {
       setIsSuccess(true)
+      setIsOpen(false)
     }, 1000)
+  }
+
+  const changePaymentAmount = (amount: number) => {
+    setPaymentAmount(amount)
   }
 
   const context = {
@@ -46,6 +52,8 @@ const PayssionProvider = ({ children }: ProviderProps) => {
     isSuceess,
     processPayment,
     goToPrevPage,
+    paymentAmount,
+    changePaymentAmount,
   }
   return <PayssionContext.Provider value={context}>{children}</PayssionContext.Provider>
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { PageTitle } from '@/components/layouts'
-import { usePage } from '@/hooks'
+import { usePage, usePayssion } from '@/hooks'
 import { useCardList } from '@/pages/CardList/hooks'
 import { PayssionApp } from '@/styles/layout.stitches'
 
@@ -10,8 +10,12 @@ import { CardListSlick, InfoMessage, PaymentAmount, Agreement, ButtonContainer }
 function CardList() {
   const { cardList, onClickCard } = useCardList()
   const { changeCurrentPage } = usePage()
+  const { closePayment, processPayment, paymentAmount } = usePayssion()
 
   const [checked, setChecked] = useState(false)
+  const [currentCard, setCurrentCard] = useState(0)
+
+  const isCurrentCardPresent = cardList[currentCard]
 
   const goToCardAddPage = () => {
     changeCurrentPage('CardAdd')
@@ -21,16 +25,29 @@ function CardList() {
     setChecked((prev) => !prev)
   }
 
+  const changeCurrentCard = (index: number) => {
+    setCurrentCard(index)
+  }
+
   return (
     <>
       <PayssionApp>
         <PageTitle title="보유 카드" />
-        <CardListSlick cardList={cardList} goToCardAddPage={goToCardAddPage} onClickCard={onClickCard} />
+        <CardListSlick
+          cardList={cardList}
+          goToCardAddPage={goToCardAddPage}
+          onClickCard={onClickCard}
+          changeCurrentCard={changeCurrentCard}
+        />
         <InfoMessage />
-        <PaymentAmount amount={0} />
+        <PaymentAmount amount={paymentAmount} />
         <Agreement checked={checked} onClick={onClickAgreement} />
       </PayssionApp>
-      <ButtonContainer onClickCancelButton={() => {}} onClickPayButton={() => {}} disabled={true} />
+      <ButtonContainer
+        onClickCancelButton={closePayment}
+        onClickPayButton={processPayment}
+        disabled={!isCurrentCardPresent || !checked}
+      />
     </>
   )
 }

@@ -7,7 +7,11 @@ import { styled } from '@/styles/stitches.config'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-const Slick = ({ children }: PropsWithChildren) => {
+interface SlickProps {
+  changeCurrentCard: (index: number) => void
+}
+
+const Slick = ({ children, changeCurrentCard }: PropsWithChildren<SlickProps>) => {
   const sliderRef = useRef<Slider>(null)
 
   const settings = useMemo<Settings>(
@@ -15,8 +19,9 @@ const Slick = ({ children }: PropsWithChildren) => {
       slidesToShow: 1,
       nextArrow: <NextArrow onClick={() => sliderRef.current?.slickNext()} />,
       prevArrow: <PrevArrow onClick={() => sliderRef.current?.slickPrev()} />,
+      afterChange: changeCurrentCard,
     }),
-    [],
+    [changeCurrentCard],
   )
   return (
     <SlideContainer>
