@@ -25,6 +25,10 @@
     "chromatic": "npx chromatic --project-token=3a2a9705e804",
     "depcheck": "depcheck"
   },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "dependencies": {
     "@radix-ui/react-toast": "^1.1.3",
     "@radix-ui/react-tooltip": "^1.0.5",
@@ -38,8 +42,6 @@
     "@types/react-dom": "^18.0.11",
     "@types/react-slick": "^0.23.10",
     "depcheck": "^1.4.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
