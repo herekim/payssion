@@ -25,7 +25,8 @@ const PayssionProvider = ({ children }: ProviderProps) => {
     setCurrentPage(prevPage)
   }
 
-  const initiatePayment = () => {
+  const initiatePayment = (amount: number) => {
+    setPaymentAmount(amount)
     setIsOpen(true)
   }
 
@@ -43,10 +44,6 @@ const PayssionProvider = ({ children }: ProviderProps) => {
     }, 1500)
   }
 
-  const changePaymentAmount = (amount: number) => {
-    setPaymentAmount(amount)
-  }
-
   const context = {
     initiatePayment,
     currentPage,
@@ -57,7 +54,6 @@ const PayssionProvider = ({ children }: ProviderProps) => {
     processPayment,
     goToPrevPage,
     paymentAmount,
-    changePaymentAmount,
     isLoading,
   }
   return <PayssionContext.Provider value={context}>{children}</PayssionContext.Provider>

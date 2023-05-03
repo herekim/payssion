@@ -3,16 +3,8 @@ import { useContext } from 'react'
 import { PayssionContext } from '@/contexts'
 
 const usePayssion = () => {
-  const {
-    initiatePayment,
-    closePayment,
-    isSuceess,
-    isOpen,
-    processPayment,
-    paymentAmount,
-    changePaymentAmount,
-    isLoading,
-  } = useContext(PayssionContext)
+  const { initiatePayment, closePayment, isSuceess, isOpen, processPayment, paymentAmount, isLoading } =
+    useContext(PayssionContext)
 
   return {
     initiatePayment,
@@ -21,7 +13,6 @@ const usePayssion = () => {
     isOpen,
     processPayment,
     paymentAmount,
-    changePaymentAmount,
     isLoading,
   }
 }

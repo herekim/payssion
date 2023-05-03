@@ -3,7 +3,7 @@ import { createContext } from 'react'
 export type Page = 'CardAdd' | 'CardCompleted' | 'CardList' | 'CardUpdate'
 
 type PayssionContext = {
-  initiatePayment: () => void
+  initiatePayment: (amount: number) => void
   closePayment: () => void
   isOpen: boolean
   isSuceess: boolean
@@ -12,7 +12,6 @@ type PayssionContext = {
   changePage: (page: Page) => void
   goToPrevPage: () => void
   paymentAmount: number
-  changePaymentAmount: (amount: number) => void
   isLoading: boolean
 }
 
@@ -26,6 +25,5 @@ export const PayssionContext = createContext<PayssionContext>({
   changePage: () => {},
   goToPrevPage: () => {},
   paymentAmount: 0,
-  changePaymentAmount: () => {},
   isLoading: false,
 })
