@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import { PageTitle } from '@/components/layouts'
-import { usePage, usePayssion } from '@/hooks'
+import { CircleLoaderModal } from '@/components/modal'
+import { usePage, usePayssion, useModal } from '@/hooks'
 import { useCardList } from '@/pages/CardList/hooks'
 import { PayssionApp } from '@/styles/layout.stitches'
 
@@ -12,10 +13,23 @@ function CardList() {
   const { changeCurrentPage } = usePage()
   const { closePayment, processPayment, paymentAmount } = usePayssion()
 
+  const { isLoading } = usePayssion()
+  const { openModal, closeModal } = useModal()
+
   const [checked, setChecked] = useState(false)
   const [currentCard, setCurrentCard] = useState(0)
 
   const isCurrentCardPresent = cardList[currentCard]
+
+  useEffect(() => {
+    if (isLoading) {
+      openModal({ element: <CircleLoaderModal /> })
+    }
+
+    if (!isLoading) {
+      closeModal({ element: CircleLoaderModal })
+    }
+  }, [isLoading, openModal, closeModal])
 
   const goToCardAddPage = () => {
     changeCurrentPage('CardAdd')

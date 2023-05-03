@@ -13,6 +13,7 @@ type PayssionContext = {
   goToPrevPage: () => void
   paymentAmount: number
   changePaymentAmount: (amount: number) => void
+  isLoading: boolean
 }
 
 export const PayssionContext = createContext<PayssionContext>({
@@ -26,4 +27,5 @@ export const PayssionContext = createContext<PayssionContext>({
   goToPrevPage: () => {},
   paymentAmount: 0,
   changePaymentAmount: () => {},
+  isLoading: false,
 })
