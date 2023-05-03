@@ -1,6 +1,6 @@
 {
   "name": "payssion",
-  "version": "0.0.50",
+  "version": "0.1.0",
   "license": "MIT",
   "private": false,
   "main": "dist/index.js",
