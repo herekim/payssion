@@ -18,8 +18,7 @@ const Agreement = ({ checked, onClick }: AgreementProps) => {
         </TransactionAgreement>
         <Label>
           <span>주문 내용을 확인하였으며, 정보 제공 등에 확인합니다.</span>
-          <input type="checkbox" id="check1" checked={checked} onChange={onClick} />
-          <label htmlFor="check1"></label>
+          <CustomCheckbox type="checkbox" checked={checked} onChange={onClick} />
         </Label>
       </CheckBoxContainer>
     </StyledAgreement>
@@ -61,13 +60,36 @@ const Detail = styled('button', {
   textDecoration: 'underline',
 })
 
-const Label = styled('p', {
+const CustomCheckbox = styled('input', {
+  appearance: 'none',
+  width: '1rem',
+  height: '1rem',
+  borderRadius: '0.25rem',
+  border: '1px solid #e2e2e2',
+  cursor: 'pointer',
+  transition: 'border-color 0.15s ease',
+  position: 'relative',
+
+  '&:checked': {
+    backgroundColor: 'white',
+  },
+
+  '&:checked::after': {
+    content: '""',
+    display: 'block',
+    width: '0.25rem',
+    height: '0.5rem',
+    border: 'solid $main',
+    borderWidth: '0 2px 2px 0',
+    position: 'absolute',
+    top: 'calc(50% - 0.125rem)',
+    left: '50%',
+    transform: 'translate(-50%, -50%) rotate(45deg)',
+  },
+})
+
+const Label = styled('label', {
   display: 'flex',
   alignItems: 'center',
   gap: '0.5rem',
-
-  '& input[type="checkbox"]': {
-    width: '1rem',
-    height: '1rem',
-  },
 })

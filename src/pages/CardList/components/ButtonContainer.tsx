@@ -31,6 +31,7 @@ const StyledButtonContainer = styled('div', {
   padding: '1rem',
   backgroundColor: 'rgba(255, 255, 255, 0.9)',
   zIndex: 10,
+  borderRadius: '1rem',
 })
 
 const Button = styled('button', {
