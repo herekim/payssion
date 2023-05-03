@@ -1,6 +1,7 @@
 import { useState, ReactNode } from 'react'
 
 import { PayssionContext, Page } from '@/contexts'
+import { PaymentError } from '@/error'
 
 interface ProviderProps {
   children: ReactNode
@@ -26,6 +27,9 @@ const PayssionProvider = ({ children }: ProviderProps) => {
   }
 
   const initiatePayment = (amount: number) => {
+    if (!amount && amount !== 0) {
+      throw new PaymentError('Error: 결제 금액이 없습니다.', 1051)
+    }
     setPaymentAmount(amount)
     setIsOpen(true)
   }

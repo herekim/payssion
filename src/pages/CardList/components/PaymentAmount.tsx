@@ -12,7 +12,7 @@ const PaymentAmount = ({ amount }: PaymentAmountProps) => {
       <StyledInfoTitle>결제금액</StyledInfoTitle>
       <TotalPayment>
         <UnderLineText>총 결제금액</UnderLineText>
-        <UnderLineText>{amount}원</UnderLineText>
+        <UnderLineText>{`${amount.toLocaleString()}원`}</UnderLineText>
       </TotalPayment>
     </StyledPaymentAmount>
   )

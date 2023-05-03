@@ -22,6 +22,7 @@ export const DarkOverlay = styled('div', {
   animation: 'toggle 1s',
   backgroundColor: 'rgba(0, 0, 0, 0.75)',
   zIndex: 100,
+  borderRadius: '1rem',
 })
 
 // export const ModalDimmed = styled('div', {
