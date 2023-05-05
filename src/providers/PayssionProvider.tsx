@@ -14,7 +14,7 @@ const PayssionProvider = ({ children }: ProviderProps) => {
   const [isSuceess, setIsSuccess] = useState<boolean>(false)
   const [paymentAmount, setPaymentAmount] = useState<number>(0)
   const [isLoading, setIsLoading] = useState<boolean>(false)
-  const [successAction, setSuccessAction] = useState<() => void>(() => {})
+  const [successAction, setSuccessAction] = useState<() => void | (() => Promise<void>)>(() => {})
 
   const changePage = (type: Page) => {
     setPageHistory([...pageHistory, currentPage])
@@ -42,7 +42,7 @@ const PayssionProvider = ({ children }: ProviderProps) => {
     setIsOpen(false)
   }
 
-  const processPayment = () => {
+  const processPayment = async () => {
     setIsLoading(true)
 
     setTimeout(async () => {
