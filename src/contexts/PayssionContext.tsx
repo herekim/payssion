@@ -2,8 +2,13 @@ import { createContext } from 'react'
 
 export type Page = 'CardAdd' | 'CardCompleted' | 'CardList' | 'CardUpdate'
 
+export interface InitiatePaymentParams {
+  amount: number
+  onSuccessAction: () => void
+}
+
 type PayssionContext = {
-  initiatePayment: (amount: number) => void
+  initiatePayment: ({ amount, onSuccessAction }: InitiatePaymentParams) => void
   closePayment: () => void
   isOpen: boolean
   isSuceess: boolean

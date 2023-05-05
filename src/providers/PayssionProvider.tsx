@@ -1,6 +1,6 @@
 import { useState, ReactNode } from 'react'
 
-import { PayssionContext, Page } from '@/contexts'
+import { PayssionContext, Page, InitiatePaymentParams } from '@/contexts'
 import { PaymentError } from '@/error'
 
 interface ProviderProps {
@@ -14,6 +14,7 @@ const PayssionProvider = ({ children }: ProviderProps) => {
   const [isSuceess, setIsSuccess] = useState<boolean>(false)
   const [paymentAmount, setPaymentAmount] = useState<number>(0)
   const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [successAction, setSuccessAction] = useState<() => void>(() => {})
 
   const changePage = (type: Page) => {
     setPageHistory([...pageHistory, currentPage])
@@ -26,9 +27,12 @@ const PayssionProvider = ({ children }: ProviderProps) => {
     setCurrentPage(prevPage)
   }
 
-  const initiatePayment = (amount: number) => {
+  const initiatePayment = ({ amount, onSuccessAction }: InitiatePaymentParams) => {
     if (!amount && amount !== 0) {
       throw new PaymentError('Error: 결제 금액이 없습니다.', 1051)
+    }
+    if (onSuccessAction) {
+      setSuccessAction(onSuccessAction)
     }
     setPaymentAmount(amount)
     setIsOpen(true)
@@ -45,6 +49,7 @@ const PayssionProvider = ({ children }: ProviderProps) => {
       setIsSuccess(true)
       setIsLoading(false)
       setIsOpen(false)
+      successAction()
     }, 1500)
   }
 
