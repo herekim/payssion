@@ -1,10 +1,11 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 
 import { PageTitle } from '@/components/layouts'
+import { PayssionContext } from '@/contexts'
 import { CardListDecorator } from '@/decorator'
 import { CardInfomation } from '@/domain'
-import { usePage, usePayssion } from '@/hooks'
+import { usePage } from '@/hooks'
 import { useCardList } from '@/pages/CardList/hooks'
 import { PayssionApp } from '@/styles/layout.stitches'
 
@@ -32,7 +33,8 @@ export default {
 const Template: ComponentStory<React.FC<CardListProps>> = (args: CardListProps) => {
   const { onClickCard } = useCardList()
   const { changeCurrentPage } = usePage()
-  const { closePayment, processPayment, paymentAmount } = usePayssion()
+
+  const { closePayment, processPayment, paymentAmount } = useContext(PayssionContext)
 
   const [checked, setChecked] = useState(false)
   const [currentCard, setCurrentCard] = useState(0)

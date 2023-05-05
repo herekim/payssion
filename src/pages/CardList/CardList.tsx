@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 
 import { PageTitle } from '@/components/layouts'
 import { CircleLoaderModal } from '@/components/modal'
-import { usePage, usePayssion, useModal } from '@/hooks'
+import { PayssionContext } from '@/contexts'
+import { usePage, useModal } from '@/hooks'
 import { useCardList } from '@/pages/CardList/hooks'
 import { PayssionApp } from '@/styles/layout.stitches'
 
@@ -11,9 +12,9 @@ import { CardListSlick, InfoMessage, PaymentAmount, Agreement, ButtonContainer }
 function CardList() {
   const { cardList, onClickCard } = useCardList()
   const { changeCurrentPage } = usePage()
-  const { closePayment, processPayment, paymentAmount } = usePayssion()
 
-  const { isLoading } = usePayssion()
+  const { closePayment, processPayment, paymentAmount, isLoading } = useContext(PayssionContext)
+
   const { openModal, closeModal } = useModal()
 
   const [checked, setChecked] = useState(false)
