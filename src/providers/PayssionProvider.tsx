@@ -27,12 +27,12 @@ const PayssionProvider = ({ children }: ProviderProps) => {
     setCurrentPage(prevPage)
   }
 
-  const initiatePayment = async ({ amount, onSuccessAction }: InitiatePaymentParams) => {
+  const initiatePayment = ({ amount, onSuccessAction }: InitiatePaymentParams) => {
     if (!amount && amount !== 0) {
       throw new PaymentError('Error: 결제 금액이 없습니다.', 1051)
     }
     if (onSuccessAction) {
-      setSuccessAction(onSuccessAction)
+      setSuccessAction(() => onSuccessAction)
     }
     setPaymentAmount(amount)
     setIsOpen(true)
@@ -42,7 +42,7 @@ const PayssionProvider = ({ children }: ProviderProps) => {
     setIsOpen(false)
   }
 
-  const processPayment = async () => {
+  const processPayment = () => {
     setIsLoading(true)
 
     setTimeout(async () => {
@@ -50,7 +50,7 @@ const PayssionProvider = ({ children }: ProviderProps) => {
       setIsLoading(false)
       setIsOpen(false)
       if (typeof successAction === 'function') {
-        await successAction()
+        successAction()
       }
     }, 1500)
   }
