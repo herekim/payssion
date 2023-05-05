@@ -1,10 +1,10 @@
-import Logo from '@/assets/logo.svg'
+import { ReactComponent as LogoIcon } from '@/assets/logo.svg'
 import { styled } from '@/styles/stitches.config'
 
 const Header = () => {
   return (
     <StyledHeader>
-      <img src={Logo} width={25} height={25} alt="" />
+      <LogoIcon width={25} height={25} />
       <Title>
         Payssion <Stick>|</Stick> 결제
       </Title>
