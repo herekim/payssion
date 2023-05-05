@@ -7,7 +7,7 @@ import { PayssionApp } from '@/styles/layout.stitches'
 import { NavigationButtonWithValidation } from './components'
 import { useCardAdd } from './hooks'
 
-function CardAdd() {
+const CardAdd = () => {
   const {
     numbersRef,
     passwordRef,

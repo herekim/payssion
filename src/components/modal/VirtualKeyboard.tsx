@@ -1,21 +1,15 @@
-import { useRef, ComponentType } from 'react'
-
 import BottomSheetContainer from '@/components/modal/BottomSheetContainer'
 import { getRandomVirtualDigits } from '@/domain'
-import { useModal, useOutsideClick } from '@/hooks'
 import { DigitButton } from '@/styles/button.stitches'
 import { styled } from '@/styles/stitches.config'
+
+import { useVirtualKeyboard } from './hooks'
 export interface VirtualKeyboardProps {
   onKeyPress: (value: string) => void
 }
 
 const VirtualKeyboard = ({ onKeyPress }: VirtualKeyboardProps) => {
-  const modalRef = useRef<HTMLDivElement>(null)
-  const { closeModal } = useModal()
-
-  useOutsideClick(modalRef, () => {
-    closeModal({ element: VirtualKeyboard as ComponentType })
-  })
+  const { modalRef } = useVirtualKeyboard()
 
   return (
     <div ref={modalRef}>
