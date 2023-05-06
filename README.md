@@ -85,8 +85,11 @@ const SomeComponent = () => {
   )
 }
 ```
-
 # 사용 예시
+
+
+https://user-images.githubusercontent.com/76519867/236610713-583ae107-90b6-4387-ba38-99ac2f8e9215.mov
+
 
 # 프로젝트 요약
 
@@ -298,7 +301,8 @@ const SomeComponent = () => {
 ### 불필요한 리렌더링 방지
 
 - CardContext의 경우 State, Dispatch의 두 가지 컨텍스트로 분리할 수 있었습니다. 이 두 가지는 아래 이미지와 같이 다른 컴포넌트에서 사용되기 때문에 하나의 컨텍스트로 묶을 경우 불필요한 리렌더링이 발생했습니다.  
-  (이미지 들어갈 공간)
+   <img width="782" alt="스크린샷 2023-05-06 15 19 33" src="https://user-images.githubusercontent.com/76519867/236610750-7ba8fcaa-f13b-42f0-828c-1588f5b97849.png">
+
 - 아래와 같이 각 컨텍스트를 분리해서 제공하는 방식으로 문제를 해결했습니다.
 
   ```tsx
