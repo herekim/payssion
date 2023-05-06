@@ -70,25 +70,25 @@ Payment💳 + Mission🎯 = Payssion🔥
 
 4. 결제 모듈 열기
 
-```tsx
-import { Payssion, isOpen } from 'payssion'
+   ```tsx
+   import { Payssion, isOpen } from 'payssion'
 
-const SomeComponent = () => {
-  const { isOpen } = usePayssion()
+   const SomeComponent = () => {
+     const { isOpen } = usePayssion()
 
-  return (
-    <>
-      <Header />
-      <Description />
-      {isOpen && <Payssion />}
-    </>
-  )
-}
-```
+     return (
+       <>
+         <Header />
+         <Description />
+         {isOpen && <Payssion />}
+       </>
+     )
+   }
+   ```
 # 사용 예시
 
 
-https://user-images.githubusercontent.com/76519867/236610713-583ae107-90b6-4387-ba38-99ac2f8e9215.mov
+   https://user-images.githubusercontent.com/76519867/236610713-583ae107-90b6-4387-ba38-99ac2f8e9215.mov
 
 
 # 프로젝트 요약
