@@ -190,6 +190,61 @@ NEXTSTEP <TDD, 클린 코드 with React> 2기에 참여해 진행한 미션형 �
 
 개별적인 컴포넌트 뿐만 아니라 컴포넌트를 조합한 페이지 섹션을 제공하여, 페이지 단위에서 어떻게 UI가 동작하는지 확인할 수 있도록 했습니다. 이를 크로마틱을 사용해서 배포함으로써 사용자가 라이브러리를 사용하기 전에 미리 동작 방식을 쉽게 확인할 수 있었습니다.
 
+## 확장성을 고려한 컴포넌트 패턴 도입
+Form 컴포넌트는 여러곳에서 재사용될 수 있으며, 언제든 요구 사항에 따라 변화할 수 있는 컴포넌트입니다. 하지만 Prop으로 데이터를 넘겨주는 방식으로 구현하게 된다면, 요구 사항이 변화할 때마다 컴포넌트 내부 코드를 변경하고, Prop에 넘겨주는 데이터도 추가되는 등의 불편함이 있을 수 있습니다. 그래서 합성 컴포넌트를 사용해 Form 내부에 들어가는 코드를 컴포넌트 사용 부분에서 관리할 수 있도록 했습니다. 이를 통해 Form의 요구 사항이 변경되더라도, 컴포넌트의 내부 구현이 아니라 사용 부분에서 수정을 해서 사용할 수 있습니다.
+
+### 예시 코드
+```tsx
+// 사용 부분
+    <CardDetailsForm>
+      <CardDetailsForm.PageTitle buttonElement={<BackButton />} title="카드 목록으로 돌아가기" />
+      <CardDetailsForm.BigCard
+        onClickDeleteButton={onClickDeleteButton}
+        cardNumbers={cardNumbers}
+        cardName={cardName}
+        cardOwner={cardOwner}
+        cardExpiredDate={cardExpiredDate}
+        cardType={cardType}
+      />
+      <CardDetailsForm.CardAliasInput inputRef={nicknameRef} defaultValue={cardNickname} />
+      <CardDetailsForm.NavigationButton
+        additionalClassNames="mt-50"
+        onBeforeNavigate={handlePreNavigation}
+        to="CardList"
+        text="다음"
+      />
+    </CardDetailsForm>
+    
+// 내부 구현
+const CardDetailsForm = ({ children }: PropsWithChildren) => {
+  const bigCard = getCardDetailsFormSubElement(children, BigCard)
+  const pageTitle = getCardDetailsFormSubElement(children, PageTitle)
+  const NavigationButton = getCardDetailsFormSubElement(children, NavigationTextButton)
+  const cardAliasInput = getCardDetailsFormSubElement(children, CardAliasInput)
+  
+  return (
+    <CustomPayssionApp>
+      <Title>{pageTitle}</Title>
+      {bigCard}
+      <InputContainer
+        css={{
+          flexCenter: 'center',
+          width: '100%',
+        }}
+      >
+        {cardAliasInput}
+      </InputContainer>
+      {NavigationButton}
+    </CustomPayssionApp>
+  )
+}
+
+CardDetailsForm.PageTitle = PageTitle
+CardDetailsForm.BigCard = BigCard
+CardDetailsForm.NavigationButton = NavigationTextButton
+CardDetailsForm.CardAliasInput = CardAliasInput
+```
+
 ## Context API 사용 시 불필요한 리렌더링 최적화
 페이지 간의 공유되어야 하는 몇 가지 상태들이 존재했습니다. 해당 프로젝트에서는 모달, 카드, 카드 리스트 상태가 여러 페이지에서 공유되어야 하는 상황이었습니다. 그래서 전역 상태 관리 도구가 필요했습니다. 서드파티 라이브러리라는 선택지도 존재했지만, Context API + useReducer를 활용하기로 결정했습니다. 그 이유는 관리되어야 하는 상태의 수와 복잡도가 높지 않았기 때문입니다. 무분별하게 서드파티 라이브러리를 사용하게될 경우 추후에 마이그레이션이 필요한 상황이나 유지보수를 하는 상황에서 더욱 어려움이 있을 것이라고 판단하고 리액트만을 사용해서 해결하는 것으로 결정했습니다.
 
@@ -345,7 +400,7 @@ CSS 클래스 이름 중복 문제로 인해 사용자가 라이브러리 사용
 
 ## 사용자에게 어떤 값을 제공할지에 대한 고민
 
-[GitHub Issue1 링크](https://github.com/herekim/payssion/issues/1)
+[issues-1](https://github.com/herekim/payssion/issues/1)
 
 - PayssionProvider, Payssion, usePayssion 세 가지로 분리해서 각각을 유저에게 전달하도록 했습니다.
 - PayssionProvider는 페이먼츠 앱을 사용할 컴포넌트를 감싸는 Provider 함수입니다.
